@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+  <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+  <link rel="stylesheet" href="../../static/css/seller/regist.css" th:href="@{/css/seller/regist.css}">
+  <script src="../../static/js/seller/regist.js" th:src="@{/js/seller/regist.js}" defer></script>
+</head>
+<body>
+<main>
+  <section>
+    <header th:replace="layout/header :: header"></header>
+    <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+    <section id="container">
+      <form th:action="@{/seller/regist}" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+        제품명:<input type="text" name="product_name"> </br>
+        가격: <input type="text" name="price"> </br>
+        내용: <input type="text" name="context"> </br>
+        영양정보: <input type="text" name="nutrition"> </br>
+        알러지 : <input type="text" name="allergy"> </br>
+        카테고리 : <input type="text" name="category"> </br>
+        재고 : <input type="text" name="stock"> </br>
+        파일:  <input type="file" name="images" multiple>
+        <input type="hidden" name="regis_date">
+        <button>확인</button>
+      </form>
+    </section>
+  </section>
+</main>
+
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bread.bakelab.mapper.PurchaseMapper">
+    <select id="find_my_list" resultMap="OrderResultMap">
+        SELECT *
+        FROM bakelab.order O
+        LEFT JOIN bakelab.purchase_list L
+        ON O.order_number = L.order_number
+        LEFT JOIN bakelab.payment P
+        ON O.order_number = P.order_number
+        WHERE O.userID = #{userID}
+        ORDER BY `purchase_date` DESC
+    </select>
+
+    <resultMap id="OrderResultMap" type="OrderDTO">
+        <association property="orderVO" javaType="OrderVO">
+            <result column="order_number" property="order_number" />
+            <result column="userID" property="userID" />
+            <result column="address" property="address" />
+            <result column="recipient" property="recipient" />
+        </association>
+        <association property="purchaseVO" javaType="PurchaseVO">
+            <result column="order_number" property="order_number" />
+            <result column="product_name" property="product_name" />
+            <result column="count" property="count" />
+        </association>
+        <association property="paymentVO" javaType="PaymentVO">
+            <result column="pay_number" property="pay_number" />
+            <result column="order_number" property="order_number" />
+            <result column="price" property="price" />
+            <result column="purchase_date" property="purchase_date" />
+            <result column="payment_state" property="payment_state" />
+        </association>
+    </resultMap>
+
+    <select id="totalPayment" resultType="int">
+        SELECT SUM(P.price) AS total
+        FROM payment P
+        INNER JOIN bakelab.order O ON P.order_number = O.order_number
+        WHERE O.userID = 'test'
+    </select>
+
+
+
+    <insert id="insert_basket" parameterType="BasketVO">
+        INSERT INTO `basket` VALUES(NULL,#{userID},#{product_name},#{count}, DEFAULT);
+    </insert>
+
+    <select id="find_basket_by_user" parameterType="String" resultMap="basketResultMap">
+        SELECT `no`,`userID`,`product_name`,`count`,`basket_regis_date` FROM `basket`
+        WHERE userID = #{userID}
+    </select>
+
+    <select id="find_basket_by_no" parameterType="int" resultMap="basketResultMap">
+        SELECT `no`,`userID`,`product_name`,`count`,`basket_regis_date` FROM `basket`
+        WHERE `no` = #{no}
+    </select>
+
+    <resultMap id="basketResultMap" type="BasketVO">
+        <id property="no" column="no"/>
+        <result property="userID" column="userID"/>
+        <result property="product_name" column="product_name"/>
+        <result property="count" column="count"/>
+        <result property="basket_regis_date" column="basket_regis_date"/>
+    </resultMap>
+
+    <delete id="delete_basket" parameterType="BasketVO">
+        DELETE FROM `basket` WHERE `no` = #{no}
+    </delete>
+
+    <insert id="insert_orderNumber" parameterType="OrderVO">
+        INSERT INTO `order` VALUES(#{order_number},#{userID},#{address},#{recipient})
+    </insert>
+
+    <insert id="insert_payment" parameterType="PaymentVO">
+        INSERT INTO `payment`VALUES
+        (#{pay_number},#{order_number},#{price},#{purchase_date},DEFAULT)
+    </insert>
+    <insert id="insert_purchase" parameterType="PurchaseVO">
+        INSERT INTO `purchase_list` VALUES
+        (#{order_number},#{product_name},#{count})
+    </insert>
+
+    <select id="find_LastOrderNumber" parameterType="String" resultMap="OrderNumberResultMap">
+        SELECT * FROM bakelab.order
+        ORDER BY `order_number` DESC
+        LIMIT 1;
+    </select>
+
+    <resultMap id="OrderNumberResultMap" type="OrderVO">
+        <id property="order_number" column="order_number"/>
+        <result property="userID" column="userID"/>
+        <result property="address" column="address"/>
+        <result property="recipient" column="recipient"/>
+    </resultMap>
+
+</mapper>

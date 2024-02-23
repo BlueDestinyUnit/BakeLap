@@ -1,0 +1,41 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bread.bakelab.mapper.ReviewMapper">
+
+    <!--  제품에 알맞는 리뷰 전체 조회 -->
+    <select id="get_all_reviews" parameterType="string" resultMap="ReviewResultMap">
+        SELECT * FROM `review`
+        WHERE `product_name` = #{product_name}
+        ORDER BY `submit_date` DESC;
+    </select>
+
+    <resultMap id="ReviewResultMap" type="ReviewVO">
+        <id property="no" column="no"/>
+        <result property="product_name" column="product_name"/>
+        <result property="userID" column="userID"/>
+        <result property="context" column="context"/>
+        <result property="score" column="score"/>
+        <result property="submit_date" column="submit_date"/>
+    </resultMap>
+
+    <!--  리뷰 작성   -->
+    <insert id="post_review_write" parameterType="ReviewVO">
+        INSERT INTO `review`
+        VALUES ( NULL, #{product_name}, #{userID}, #{context}, #{score}, DEFAULT);
+    </insert>
+
+    <!--  리뷰 수정  -->
+    <update id="review_update" parameterType="ReviewVO">
+        UPDATE `review`
+        SET `context` = #{context}, `score` = #{score}, `submit_date` = DEFAULT
+        WHERE `no` = #{no}
+    </update>
+
+    <!--  리뷰 삭제  -->
+    <delete id="review_delete" parameterType="int">
+        DELETE FROM `review` WHERE `no` = #{no}
+    </delete>
+
+
+</mapper>

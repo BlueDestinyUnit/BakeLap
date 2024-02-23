@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/css/product/basket.css" th:href="@{/css/product/basket.css}" }>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <script src="../../static/js/product/basket.js" th:src="@{/js/product/basket.js}" defer></script>
+</head>
+<script sec:authorize="!authenticated">
+    window.onload = () => {
+        create_cookiedate();
+    }
+</script>
+<script sec:authorize="authenticated">
+    window.onload = () => {
+        // 여기에서 원하는 작업 수행
+        get_all_basketList();
+    }
+</script>
+<body>
+    <main>
+        <section>
+            <header th:replace="layout/header :: header"></header>
+            <aside th:replace="layout/side_bar :: side_bar"></aside>
+  
+            <section class="basket">
+                <section class="cart-title">
+                    <h1 class="Box-title">장바구니목록</h1>
+                </section>
+                <section class="Box1">
+                    <section class="cart">
+                        <div class="cart_information">
+                            <ul>
+                                <li>장바구니 상품은 최대 30일간 저장됩니다.</li>
+                                <li>가격, 옵션 등 정보가 변경된 경우 주문이 불가할 수 있습니다.</li>
+                                <li>오늘출발 상품은 판매자 설정 시점에 따라 오늘출발 여부가 변경될 수 있으니 주문 시 꼭 다시 확인해 주시기 바랍니다.</li>
+                            </ul>
+                        </div>
+                        <table class="cart_list">
+                            <thead style="height:40px;">
+                                <tr>
+                                    <td><input class="allCheck" type="checkbox"></td>
+                                    <td colspan="2">상품정보</td>
+                                    <td>물품명/수량</td>
+                                    <td>상품금액</td>
+                                    <td>배송비</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="cart_list_detail">
+
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">
+                                            <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                                            <button class="cart_list_optionbtn" id="deleteBtn">선택상품 삭제</button>
+                                    </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="cart_mainbtns">
+                            <button class="cart_bigorderbtn left">쇼핑 계속하기</button>
+                            <button class="cart_bigorderbtn right">주문하기</button>
+                        </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </main>
+</body>
+</html>

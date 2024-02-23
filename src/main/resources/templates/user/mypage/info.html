@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mypage</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../../static/css/user/mypage/info.css" th:href="@{/css/user/mypage/info.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../../static/js/user/mypage/infoFormat.js" th:src="@{/js/user/mypage/infoFormat.js}" defer></script>
+    <script src="../../../static/js/user/mypage/info.js" th:src="@{/js/user/mypage/info.js}" defer></script>
+
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+        <section class="Box1">
+            <section class="innerBox1">
+                <h1 class="MyPage">My Page</h1>
+                <section class="join">
+
+                    <form name="join_form" action="" method="get" id="jaoin_form">
+                        <p>
+                            <label>이름</label> <span>|</span>
+                            <label th:text="${#authentication.principal.userVO.name}">홍길동</label>
+                            <br>
+                        </p>
+                        <p>
+                            <label>아이디</label> <span>|</span>
+                            <label th:text="${#authentication.principal.userVO.id}">Gildong2</label>
+                            <br>
+                        </p>
+                        <p>
+                            <label>이메일</label> <span>|</span>
+                            <label th:text="${#authentication.principal.userVO.email}">Gildong2@naver.com</label>
+                        </p>
+                        <p>
+                            <label>전화번호</label> <span>|</span>
+                            <label class="tel" th:text="${#authentication.principal.userVO.tel}">010-1234-5678</label>
+                        </p>
+                        <p>
+                            <label>주소</label> <span>|</span>
+                            <label class="addr" th:text="${#authentication.principal.userVO.address}">대구 중구 동덕로30길 45 1층</label>
+                        </p>
+                        <p class="final_btn">
+                            <a href="/user/find/pwdReform"><button type="button" class="btn">비밀번호 변경하기</button></a>
+                            <a href="/user/mypage/infoUpdate"><button type="button" class="btn">정보 수정하기</button></a>
+                            <a href="/user/mypage/orderList"><button type="button" class="btn">결제 목록</button></a>
+                            <a href="/user/mypage/delete_account" th:href="@{|/user/delete/account/${#authentication.principal.userVO.id}|}"><button type="button" class="btn" id="delete">탈퇴하기</button></a>
+                        </p>
+                    </form>
+                </section>
+            </section>
+        </section>
+    </section>
+</main>
+</body>
+</html>

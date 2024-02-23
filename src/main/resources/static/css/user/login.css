@@ -1,0 +1,159 @@
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{margin:0; padding:0;}
+a{text-decoration: none; color:#772800;}
+ul,li{list-style: none;}
+input{border:none;}
+
+
+/* body영역 */
+
+.Box1{
+    margin:0 auto;
+    background-color: #fdfdfd;
+    margin-top:55px;
+    width:800px;
+    height:700px;
+    box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
+    border-radius: 30px;
+}
+
+.innerBox1{
+    padding-top:40px;
+}
+
+.LOGIN {
+    width: 168px;
+    height: 72px;
+    margin: 0 auto;
+    opacity: 0.1;
+    font-family: MaruBuri;
+    font-size: 53.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #bc734e;
+}
+
+.find {
+    font-family: MaruBuri;
+    font-size: 18px;
+    font-weight: bolder;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #772800;
+}
+
+.LOGIN-BOX {
+    width: 150px;
+    height: 22.5px;
+    margin: 20px auto;
+    padding: 25px 180px 23px;
+    background-color: #fcebe2;
+    border-radius: 50px;
+    text-align: center;
+}
+.LOGIN-BOX2{
+    width: 150px;
+    height: 22.5px;
+    margin: 20px auto;
+    padding: 25px 180px 23px;
+    border-radius: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+.LOGIN-BOX2>a>img{
+    width: 500px;
+    height: 60px;
+    border-radius: 10px;
+
+}
+
+
+.LOGIN2 {
+    width: 97px;
+    height: 42px;
+    color: #772800;
+}
+
+.LOGIN2 > button{
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    font-family: MaruBuri;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #772800;
+}
+
+.ID,.PASSWORD {
+    width: 150px;
+    height: 22.5px;
+    border-radius: 50px;
+    display: block;
+    margin: 20px auto;
+    padding: 25px 315px 24px 44px;
+    background-color: #fcebe2;
+    font-family: MaruBuri;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #772800;
+}
+
+.JOIN-BOX {
+    width: 150px;
+    height: 22.5px;
+    margin: 20px auto;
+    padding: 25px 180px 23px;
+    background-color: #772800;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.JOIN-US {
+    width: 97px;
+    height: 42px;
+    font-family: MaruBuri;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #fcebe2;
+}
+
+input{
+    border:none;
+}
+
+.LOGIN-BOX2>a>img{
+    width: 300px;
+    height: 70px;
+    border-radius: 50px;
+    background-color: #fee500;
+    padding-left:110px;
+    padding-right:110px;
+}

@@ -1,0 +1,610 @@
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+    *{margin:0; padding:0;}
+    a{text-decoration: none; color:#772800;}
+    ul,li{list-style: none;}
+    input{border:none;}
+  
+  
+  /* header영역 */
+   .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 12px;
+  }
+  
+  .navbar_icons {
+      list-style: none;
+      display: flex;
+      padding-left: 0;
+      margin-right: 130px;
+  }
+  
+  .navbar_icons li {
+      padding: 8px 12px;
+      margin-top: 12.5px;
+  }
+
+  .navbar_icons p {
+    color: #772800;
+  font-family: 'MaruBuri';
+}
+
+/* side-bar 영역 */
+  
+.side-bar > ul ul {
+    display: none;
+  }
+  
+  :root {
+    --side-bar-width: 270px;
+    --side-bar-height: 90vh;
+  }
+  
+  .side-bar {
+    position: fixed;    
+    background-color: #772800;
+    width: var(--side-bar-width);
+    min-height: var(--side-bar-height);   
+    margin-top: calc((100vh - var(--side-bar-height)) / 2);    
+  }
+  
+  .side-bar__icon-box {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .side-bar__icon-1 {
+    position: relative;
+    width: 23px;
+    height: 17px;
+    margin: 15px;
+    margin-top: 20px;
+    transition: .5s;
+  }
+  
+  :root {
+    --side-bar__icon: .5s;
+  }
+  
+  .side-bar__icon-1 > div {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: white;
+    transition: all var(--side-bar__icon);
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(1) {
+    top: 0;
+    width: auto;
+    left: 0;
+    right: 0;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(2) {
+    top: 40%;
+    transform-origin:bottom left;
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 80%;
+    left: auto;
+    right: 0;
+    transform-origin:bottom right;
+  }
+  
+  
+  .side-bar:hover .side-bar__icon-1 {
+    transform: translate(-198px, 0);
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+    transform:rotate(45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 40%;
+    transform:rotate(-45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+    left: 41%;
+    right: 41%;
+    height: 100%;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+  }
+  
+  .side-bar ul > li > a {
+    display: block;
+    color: #fcebe2;
+    font-family: 'MaruBuri';
+    font-size: 1.4rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    transition: .5s;
+  }
+  
+  .side-bar > ul > li {
+    position: relative;
+  }
+  
+  .side-bar ul > li:hover > a {
+    background-color: #4b1900;
+  }
+  
+  .side-bar > ul > li:hover > ul {
+    display: block;
+    position: absolute;
+    background-color: #772800;
+    top: 0;         
+    left: 100%;     
+    width: 100%;    
+  }
+  
+  .side-bar {
+    border-radius: 20px;
+    transform: translate(calc(var(--side-bar-width) * -0.8), 0);
+    transition: .5s;
+  }
+  
+  .side-bar:hover {
+    transform: translate(-20px, 0);
+  }
+  
+  /* search영역 */
+  
+  .search-box{
+    padding: 10px;
+    position: absolute;
+    top: 5%;
+    left: 83%;
+    transform: translate(-50%,-50%);
+    height: 30px;
+    background-color: #fff;
+    border-radius: 30px;
+    transition: 0.4s;
+    width:30px;
+  }
+  .search-box:hover{
+    box-shadow: 0px 0px .5px 1px #772800;
+    width: 382px;
+  }
+  .search-btn{
+    text-decoration: none;
+    float: right;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #772800;
+  }
+  .search-box:hover > .search-btn{
+    background-color: #fff;
+  }
+  .search-txt{
+    display: flex;
+    padding: 0;
+    width: 0px;
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    font-size: 1rem;
+    line-height: 30px;
+    transition: .4s;
+  }
+  .search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+  }  
+
+  .area {
+    display: flex;
+    margin-top:100px;
+    height: 1300px;
+    width: 700px;
+    margin-left:350px;
+}
+
+.area_aside {
+    display: flex;
+    position:absolute;
+    margin-top:-1300px;
+    height: 500px;
+    width: 500px;
+    margin-left:1110px;
+}
+
+
+/*********************************************************/
+/* 아코디언 컴포넌트 동작 정의 */
+
+.accordion {
+    flex: 3 1 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 아코디언 아이템 닫혔을때 */
+
+.accordion .accordion_item  {
+    display: flex;
+    min-height: fit-content;
+    flex-direction: column;
+    transition: all 0.5s;
+}
+
+.accordion .accordion_item > button {
+    display: flex;
+    padding: 0.75rem 1rem;
+    border: 0;
+    align-items: center;
+    border-bottom: 1px solid rgb(231, 231, 231);
+    overflow-anchor : none;
+    background-color: rgb(255, 255, 255);
+    color: #772800;
+    font-size:22px;
+    background-color: #fcebe2;
+            font-weight: bold;
+            font-family: 'MaruBuri';
+    
+}
+
+.accordion .accordion_item > button::after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: '';
+    background-image: url(../../image/bottom-arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.accordion .accordion_item > .accordion_content {
+    display: none;
+}
+
+/* 아코디언 아이템 열렸을때 */
+
+.accordion .accordion_item.open{
+    flex: 1 1 1px;
+}
+
+.accordion .accordion_item.open > button {
+    border: 0;
+    color: #772800;
+  font-family: 'MaruBuri';
+  font-weight: bold;
+  font-size:22px;
+    background-color: #fcebe2;
+}
+
+.accordion .accordion_item.open > button::after {
+    transform: rotate(-180deg);
+}
+
+.accordion .accordion_item.open  > .accordion_content {
+    display: flex;
+    flex: 1 1 1px;
+    overflow-y: auto;
+}
+
+.accordion .accordion_item  > .accordion_content::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+}
+
+.accordion .accordion_item  > .accordion_content::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.accordion .accordion_item > .accordion_content::-webkit-scrollbar-thumb {
+    height: 17%;
+    background-color: #999999;
+    border-radius: 10px;
+}
+
+.accordion_content:nth-child(1) > form{
+height: 300px;
+}
+
+/* 배송지 영역 */
+form > .delivery > table { margin-top:40px; margin-left:110px; }
+
+form > .delivery > table tr > td:nth-child(1) { padding: 6px; }
+
+form > .delivery > table > tbody > tr{margin-top:22px;}
+
+form > .delivery > table input[type=button] {
+            padding: 5px 8px;
+            background-color: #fcebe2;
+            border:none;
+            color: #772800;
+            border-radius: 25px;
+            font-weight: bold;
+            font-family: 'MaruBuri';
+            outline: none;
+            text-align: center;
+}
+
+form > .delivery > table button {
+    padding: 5px 8px;
+    background-color: #fcebe2;
+    border:none;
+    color: #772800;
+    border-radius: 25px;
+    font-weight: bold;
+    font-family: 'MaruBuri';
+    outline: none;
+    text-align: center;
+}
+
+form input {
+    color: #772800;
+    font-family: 'MaruBuri';
+            padding: 2px 0;
+            border: 1px solid #999;
+            box-sizing: border-box;
+        }
+
+form > .delivery > table input[name=addr1] { width: 400px; }
+
+/* 주문자 영역 */
+.private{
+    color: #772800;
+    font-family: 'MaruBuri';
+    margin-top:22px;
+    font-size:18px;
+    font-weight: bold;
+}
+/* 구매목록 영역 */
+
+  .cart > p,
+  .cart > span {
+    margin: 0;
+  }
+  
+  .cart > a {
+    color: #772800;
+  }
+  
+  .cart {
+    width: 105%;
+    height:auto;
+    padding: 25px;
+    margin-left:15px;
+    padding-left: 0;
+  }
+  
+  .cart ul {
+    background-color: whitesmoke;
+    padding: 30px;
+    margin-bottom: 50px;
+    border: whitesmoke solid 1px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 300;
+  }
+  
+  .cart ul :first-child {
+    color: #772800;
+    font-family: 'MaruBuri';
+    font-weight: bold;
+  }
+  
+  .cart > table {
+    border-top: solid 1.5px #772800;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+  }
+  
+  .cart > table > thead {
+    border-bottom: solid 1px #772800;
+    text-align: center;
+    color: #772800;
+    font-family: 'MaruBuri';
+    font-weight: bold;
+  }
+  
+  .cart > table > tbody {
+    border-bottom: solid 1px #772800;
+    color: #772800;
+    font-family: 'MaruBuri';
+    font-size: 12px;
+  }
+  
+  .cart > table > tbody > td {
+    color: #772800;
+    font-family: 'MaruBuri';
+    padding: 15px 0px;
+    border-bottom: 1px solid #772800;
+  }
+
+  .cart_list_detail{
+      border-top: solid 1.5px #772800;
+  }
+  
+  .cart_list_detail :nth-child(3) {
+    vertical-align: top;
+
+  }
+  
+  .cart_list_detail :nth-child(3) a {
+    font-size: 12px;
+  }
+  
+  .cart_list_detail :nth-child(3) p {
+    margin-top: 34px;
+    font-weight: bold;
+  }
+
+  .cart_list_detail :nth-child(4){
+      font-size: 12px;
+      color: #4b1900;
+      font-weight: bold;
+      font-family: 'MaruBuri';
+  }
+  
+  .cart_list_smartstore {
+    font-size: 12px;
+    color: #4b1900;
+    font-weight: bold;
+    font-family: 'MaruBuri';
+  }
+  
+  .cart_list_option {
+    vertical-align: top;
+    padding: 20px;
+    padding-top: 50px;
+  }
+  
+  .cart_list_option p {
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+#td5{
+    text-align: center;
+    width: 80px;
+}
+
+#td6 {
+    text-align: center;
+}
+
+  .price {
+    font-weight: bold;
+    color: #772800;
+    font-family: 'MaruBuri';
+    border:none;
+  }
+  
+  .cart_mainbtns {
+    width: 420px;
+    height: 200px;
+    padding-top: 40px;
+    display: block;
+    margin: auto;
+  }
+  
+  .cart_bigorderbtn {
+    width: 200px;
+    height: 50px;
+    font-family: 'MaruBuri';
+    color:#fcebe2;
+    font-size: 16px;
+    margin: auto;
+    border-radius: 5px;
+  }
+  
+  .cart > table > tfoot > tr > td > button {
+    margin-top:15px;
+    color: #772800;
+    font-family: 'MaruBuri';
+  }  
+
+  /* 결제수단 영역 */
+.payment{margin-top:22px;}
+.payment > div { margin-bottom: 10px; }
+.payment > div > span {
+      display: inline-block;
+      color: #772800;
+    font-family: 'MaruBuri';
+      margin: 6px 0;
+  }
+ .payment > div label { margin-right: 16px; font-family: 'MaruBuri'; }
+.payment > div input {
+      vertical-align: bottom;
+      margin-right: 4px;
+  }
+form > .alert {
+    margin-top:22px;
+    width: 700px;
+    font-family: 'MaruBuri';
+    background-color: #f7f7f7;
+    padding: 6px;
+    padding-left: 20px;
+    color: #999;
+    box-sizing: border-box;
+}
+
+/* 결제 상세 영역 */
+form > .final {
+  float: right;
+  width: 360px;
+  height: 412px;
+  padding: 20px;
+  margin-top: 22px;
+  margin-left:70px;
+  background: #fff;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box;
+}
+
+form > .final > h2 {
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+  border-bottom: 1px solid #111;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+  color: #772800;
+  font-family: 'MaruBuri';
+}
+
+form > .final > table { width: 100%; }
+
+form > .final > table tr:nth-last-child(1) td {
+  font-size: 20px;
+}
+
+form > .final > table tr:nth-last-child(1) td:last-child {
+  color: #c01313;
+  font-weight: bold;
+  font-family: 'MaruBuri';
+  font-size: 20px;
+  font-weight: bold;
+}
+
+form > .final > table td {
+  padding: 10px 0;
+  font-size: 14px;
+  color: #772800;
+  font-family: 'MaruBuri';
+}
+
+form > .final > table td:last-child { text-align: right; }
+
+#pay {
+    width: 100%;
+    height: 56px;
+    font-size: 26px;
+    border-width: 1px;
+    border-color: #d81818;
+    border-bottom-color: #9e1212;
+    background: #772800;
+    background-image: -webkit-linear-gradient(#a13600, #772800);
+    color: #fcebe2;
+    font-family: 'MaruBuri';
+    box-sizing: border-box;
+    margin-top: 10px;
+}

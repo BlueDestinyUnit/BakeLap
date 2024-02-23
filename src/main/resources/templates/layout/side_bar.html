@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>SIDE_BER</title>
+    <link rel="stylesheet" href="../../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+</head>
+<body>
+<aside th:fragment="side_bar" class="side-bar">
+    <section class="side-bar__icon-box">
+        <section class="side-bar__icon-1">
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+    </section>
+    <ul>
+        <li>
+            <a href="/">Bake Lab</a>
+            <ul>
+                <li><a href="/story">Bake Lab`s story</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/">Menu</a>
+            <ul class="category">
+                <li class="bread"><a href="#">Bread</a></li>
+                <li class="cake"><a href="#">Cake</a></li>
+                <li class="cookie"><a href="#">Cookie</a></li>
+                <li class="dessert"><a href="#">Dessert</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/user/mypage/info">Mypage</a>
+        </li>
+    </ul>
+</aside>
+</body>
+</html>

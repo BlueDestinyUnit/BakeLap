@@ -1,0 +1,50 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bread.bakelab.mapper.SellerMapper">
+    <insert id="post_product" parameterType="ProductVO">
+        INSERT INTO `bread_list`
+        VALUES (#{product_name}, #{price}, #{context},#{nutrition}, #{allergy}, #{category}, #{stock}, DEFAULT)
+    </insert>
+
+    <!-- 바로 위에서 insert 했던 제품의 이미지들을 저장   -->
+    <insert id="post_images" parameterType="ImagesVO">
+        <selectKey keyProperty="product_name" order="BEFORE" resultType="String">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+
+        INSERT INTO `bread_images` VALUES
+        <foreach collection="list" item="images" separator=",">
+            (NULL, #{images.product_name}, #{images.image})
+        </foreach>
+    </insert>
+
+    
+    <insert id="post_stock" parameterType="StockVO">
+        INSERT INTO `sell_stock` VALUES(#{product_name}, DEFAULT)
+    </insert>
+
+    <update id="update_sell_stock" parameterType="java.util.Map">
+        UPDATE `sell_stock` SET
+        `stock` = `stock` + #{count}
+        WHERE `product_name` =  #{product_name}
+    </update>
+
+    <select id="find_stock" parameterType="StockVO" resultMap="stock">
+        SELECT * FROM sell_stock
+    </select>
+
+    <resultMap id="stock" type="StockVO">
+        <id property="product_name" column="product_name"/>
+        <result property="stock" column="stock"/>
+    </resultMap>
+
+
+
+    <!--    <insert id="post_images" parameterType="ImageVO" useGeneratedKeys="true" keyProperty="product_name">-->
+    <!--        INSERT INTO `bread_images` VALUES-->
+    <!--        (NULL, #{product_name}, #{image})-->
+    <!--    </insert>-->
+
+
+</mapper>

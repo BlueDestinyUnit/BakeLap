@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find_pwd</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../../static/css/user/find/find_pwd_account.css" th:href="@{/css/user/find/find_pwd_account.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+        <section>
+            <header th:replace="layout/header :: header"></header>
+            <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+          <section class="Box1">
+            <section class="innerBox1">
+            <h1 class="Find_pwd">Find_pwd</h1>
+            <section class="Find_id_com">
+              <h1 th:text="${userName} + 님">홍길동님</h1><p>본인인증이 완료되었습니다.</p>
+          </section>
+          <form name="join_form" th:action="@{/user/find/pwdReform}"  id="jaoin_form">
+            <input type="hidden" name="id" th:value="${userId}">
+            <p class="final_btn">
+                <a href="/user/find/pwdReform"><button type="submit" class="btn">비밀번호 재설정하기</button></a>
+            </p>
+        </form>
+            </section>
+          </section>
+        </section>
+    </main>
+</body>
+</html>

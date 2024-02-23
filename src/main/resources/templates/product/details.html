@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detail</title>
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../static/css/product/details.css" th:href="@{/css/product/details.css}">
+    <script src="../../static/js/product/details_review.js" th:src="@{/js/product/details_review.js}" defer></script>
+    <script src="../../static/js/product/details_review_writeBtn.js" th:src="@{/js/product/details_review_writeBtn.js}" defer></script>
+    <script src="../../static/js/product/details.js" th:src="@{/js/product/details.js}" defer></script>
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+        <ul class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Bread</a></li>
+            <li th:text="${productDTO.productVO.product_name}"></li>
+        </ul>
+
+        <section class="top_detail">
+            <div class="product_img">
+                <img th:src="@{'/product/image/' + ${productDTO.imagesVO[0].image}}" alt="이미지가 없습니다">
+            </div>
+            <div class="product_detail">
+                <h1 th:text="${productDTO.productVO.product_name}"></h1>
+                <hr>
+                <p class="price" th:text="${productDTO.productVO.price} + 원"><span>원</span></p>
+                <p class="product_info" th:text="${productDTO.productVO.context}"></p>
+                <hr>
+                <div class="nutritional">
+                    <h3>영양 정보</h3>
+                    <p class="info" id="nutritional" th:text="${productDTO.productVO.nutrition}">440 · 1회 제공량(g) : 100 · 100g당 1회 제공 칼로리(kcal) : 1780<br>
+                        1회 제공량당(% : 1일 영양성분기준치에 대한 비율) - 나트륨(mg/%) : 150/8<br> · 당류(g/%) : 15 · 포화지방(g/%) : 7/47 · 단백질(g/%) : 8/15</p>
+                </div>
+                <hr>
+                <div class="allergy">
+                    <h3 > 알레르기 정보</h3>
+                    <p class="info" th:text="${productDTO.productVO.allergy}">밀, 우유, 계란 함유</p>
+                </div>
+                <hr>
+                <div class="stock">
+                    <h3>재고 수량</h3>
+                    <p class="info" th:text="${productDTO.productVO.stock}"></p>
+                </div>
+
+                <hr>
+                <div class="num">
+                    <h3>선택한 갯수</h3>
+                    <input type='button'
+                           onclick='count("plus")'
+                           value='+'/>
+                    <input type='button'
+                           onclick='count("minus")'
+                           value='-'/>
+                    <div id='result'>1</div>
+                </div>
+
+                <div class="detail_btn">
+                    <div>
+                        <form th:action="@{/basketReady}" method="post">
+                            <input type="hidden" name="product_name" th:value="${productDTO.productVO.product_name}">
+                            <input type="hidden" name="count" value="1">
+                            <button class="buy"><p>장바구니에 담기</p></button>
+                        </form>
+                    </div>
+                    <div>
+                        <form th:action="@{/purchaseReady}" method="post" >
+                            <button class="basket"><p>바로 구매하기 →</p></button>
+                            <input type="hidden" id="csrfToken" th:if="${#authentication.principal != null}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"> </br>
+                            <input type="hidden" name="no" value="0"> </br>
+                            <input type="hidden" name="userID" th:if="${#authentication.principal != null}" th:value="${#authentication.principal.userVO.name}" th:unless="${#authentication.principal != null}" value="null" />
+                            <input type="hidden" name="product_name" th:value="${productDTO.productVO.product_name}"> </br>
+                            <input type="hidden" name="count" value="1"> </br>
+                        </form>
+                    </div>
+                    <div>
+                        <form>
+                            <button sec:authorize="authenticated" class="review" type="button"><p>리뷰 작성하기</p></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--  리뷰 write   -->
+        <section class="review_write create">
+            <li class="hidden" sec:authorize="isAuthenticated()">
+                <span class="hidden" sec:authentication="principal.username"></span>
+            </li>
+            <div>
+                <iframe name="iframe1" style="display:none"></iframe>
+                <form th:action="@{/review}" method="post" target="iframe1">
+                    <input type="hidden" name="product_name" th:value="${productDTO.productVO.product_name}">
+                    <div class="textarea_header">
+                        <i class="fa-solid fa-star" style="color: #c01313;"></i><span>Pick ! : </span>
+                        <label>
+                            <input type="radio" name="score" value="1" checked="checked">
+                            <span>1점</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="score" value="2">
+                            <span>2점</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="score" value="3">
+                            <span>3점</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="score" value="4">
+                            <span>4점</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="score" value="5">
+                            <span>5점</span>
+                        </label>
+                    </div>
+                    <div class="textarea">
+                        <textarea name="context" placeholder="해당 제품에 대한 후기를 이곳에 적어 주세요"></textarea>
+                    </div>
+                    <div class="textarea_footer">
+                        <span id="counter">0</span><span>/</span><span>500</span>
+                        <button type="submit" class="review_save"><p>등록</p></button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- 리뷰 header  -->
+        <div class="review_header">
+            <h1>Review</h1>
+            <span class="counts">0건</span>
+            <i class="fa-solid fa-star review_icon"></i>
+            <span class="all_avg">사용자 총 평점</span>
+            <span class="avg">4</span><span class="avg"> / 5</span>
+            <hr>
+        </div>
+
+        <!--    리뷰 view(context)   -->
+        <section class="review_context">
+        </section>
+
+        <!--     리뷰 수정 창 view(context)       -->
+        <section class="review_context_modal update">
+            <div class="modal_btn">
+                <button type="button" class="update_delete_btn">
+                    <i class="fa-solid fa-xmark fa-2xl"></i>
+                </button>
+            </div>
+            <div class="modal_name">
+                <span>리뷰 수정창</span>
+            </div>
+            <iframe name="iframe2" style="display:none"></iframe>
+            <form th:action="@{/review/update}" method="post" target="iframe1">
+                <input type="hidden" name="no" value="">
+
+                <div class="textarea_header">
+                    <i class="fa-solid fa-star" style="color: #c01313;"></i><span>Pick ! : </span>
+                    <label>
+                        <input type="radio" name="score" value="1" checked="checked">
+                        <span>1점</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="score" value="2">
+                        <span>2점</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="score" value="3">
+                        <span>3점</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="score" value="4">
+                        <span>4점</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="score" value="5">
+                        <span>5점</span>
+                    </label>
+                </div>
+                <div class="textarea">
+                    <textarea class="update_textarea" name="context" placeholder="수정할 내용을 입력 해주세요"></textarea>
+                </div>
+                <div class="textarea_footer">
+                    <span id="counter_update">0</span><span>/</span><span>500</span>
+                    <button type="submit" class="review_save"><p>수정</p></button>
+                </div>
+            </form>
+        </section>
+
+    </section>
+</main>
+</body>
+</html>

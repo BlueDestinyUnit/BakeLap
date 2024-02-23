@@ -1,0 +1,21 @@
+.postForm {
+    border: 1px solid black;
+    margin: 0 auto;
+    width: 1500px;
+}
+
+.postForm input{
+    border: 1px solid black;
+}
+
+
+#context{
+    width: 700px;
+}
+#nutrition{
+    width: 700px;
+}
+
+#allergy{
+    width: 500px;
+}

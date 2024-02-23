@@ -1,0 +1,56 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bread.bakelab.mapper.UserMapper">
+    <select id="get_user" parameterType="string" resultType="UserVO">
+        SELECT * FROM `user` WHERE `id` = #{id}
+    </select>
+
+    <!--  회원 가입   -->
+    <insert id="join_user" parameterType="UserVO">
+        INSERT INTO `user`
+        VALUES (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{address}, #{role}, default)
+    </insert>
+    <!--소셜 회원가입-->
+    <insert id="social_join_user" parameterType="UserVO">
+        INSERT INTO `user`
+        VALUES (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{address}, #{role}, 'KAKAO')
+    </insert>
+
+    <!-- 소셜로그인 id를 email을 통해 확인함   -->
+    <select id="get_user_email" parameterType="string" resultType="UserVO">
+        SELECT * FROM `user` WHERE `email`=#{email}
+    </select>
+
+    <!--  아이디 중복 체크   -->
+    <select id="check_user_id" resultType="int">
+        SELECT COUNT(*) FROM `user`
+        WHERE `id` = #{id};
+    </select>
+
+    <select id="get_user_find_id" parameterType="string" resultType="UserVO">
+        SELECT `id` FROM `user` WHERE `email`= #{email} and `name`= #{name}
+    </select>
+
+    <!-- 비번 변경 -->
+    <update id="update_pw" parameterType="UserVO">
+        UPDATE `user` SET
+        `pw` = #{pw}
+        WHERE `id` = #{id}
+    </update>
+
+    <!-- 회원 탈퇴   -->
+    <delete id="delete_account" parameterType="string">
+        DELETE  FROM `user` WHERE `id`= #{id}
+    </delete>
+
+    <!--  마이 페이지 관련    -->
+    <update id="update_user" parameterType="UserVO">
+        UPDATE `user` SET
+        `address` = #{address},
+        `email` =  #{email},
+        `tel` = #{tel}
+        WHERE `id` = #{id}
+    </update>
+
+</mapper>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+    <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../static/css/product/buy.css" th:href="@{/css/product/buy.css}">
+    <script src="../../static/js/product/buy.js" th:src="@{/js/product/buy.js}" defer></script>
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
+    <script src="../../static/js/user/address.js" th:src="@{/js/user/address.js}" defer></script>
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+        <div class="area">
+            <div class="accordion">
+                <div class="accordion_item open">
+                    <button>
+                        배송정보
+                    </button>
+                    <div class="accordion_content">
+                        <form action="#">
+                            <!-- 배송정보 -->
+                            <article class="delivery">
+                                <table>
+                                    <tr>
+                                        <td>주문자</td>
+                                        <td><input type="text" name="orderer" th:value="${#authentication.principal.userVO.name}" readonly>
+
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>휴대폰</td>
+                                        <td>
+                                            <input type="text" name="hp" th:value="${#authentication.principal.userVO.tel}" readonly>
+                                            <span>- 포함x</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>우편번호</td>
+                                        <td>
+                                            <input type="hidden" id="address" th:value="${#authentication.principal.userVO.address}" >
+                                            <input type="text" class="addressList" name="zip" id="postalCode" >
+                                            <button id="addrSerch" type="button" onclick="sample4_execDaumPostcode()">주소검색</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>기본주소</td>
+                                        <td>
+                                            <input type="text" class="addressList" name="addr1" id="addr1" >
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>상세주소</td>
+                                        <td><input type="text" class="addressList" name="addr2" id="addr2"></td>
+                                    </tr>
+                                </table>
+                            </article>
+                        </form>
+                    </div>
+                </div>
+                <div class="accordion_item open">
+                    <button>
+                        받는사람
+                    </button>
+                    <div class="accordion_content">
+                        <div class="private">
+                            <h1 id="name" th:text="${#authentication.principal.userVO.name}" >홍길동</h1>
+                            <p id="tel" th:text="${#authentication.principal.userVO.tel}">01*-1***-5***</p>
+                            <p id="email"th:text="${#authentication.principal.userVO.email}">Gi*****@n****.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion_item open">
+                    <button>
+                        주문상품
+                    </button>
+                    <div class="accordion_content">
+                        <section class="basket">
+                            <section class="Box1">
+                                <section class="cart">
+                                    <table class="cart__list">
+                                        <form>
+                                            <thead style="height:40px;">
+                                            <tr>
+                                                <td colspan="2">상품정보</td>
+                                                <td>물품명/수량</td>
+                                                <td>상품금액</td>
+                                                <td>배송비</td>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="mainTbody">
+                                                <tr class="cart_list_detail">
+                                                    <td style="border:1px solid #772800; border-left:none; border-right:none;"></td>
+                                                    <td style="border-right:1px solid #772800;"><img src="" alt="피칸파이" style="width:80px; height:80px;"></td>
+                                                    <td style="border-right:1px solid #772800;"><a href="#"><p style="margin-left:45px;">피칸파이</p></a>
+                                                        <span style="text-decoration: line-through; color: lightgray; margin-left:45px;">119,000</span>
+                                                        <span class="price">116,62원</span>
+                                                    </td>
+                                                    <td class="cart_list_option">
+                                                        <p>품목명 : 피칸파이 / 1개</p>
+                                                        <button class="cart_list_optionbtn">주문조건 추가/변경</button>
+                                                    </td>
+                                                    <td style="border-left:1px solid #772800;"><span class="price">116,620원</span><br>
+                                                        <button class="cart_list_orderbtn">주문하기</button>
+                                                    </td>
+                                                    <td style="border:1px solid #772800; border-right:none; font-weight:bold;">무료</td>
+                                                </tr>
+                                                <tr class="cart_list_detail">
+                                                    <td style="width: 2%; border:1px solid #772800; border-left:none; border-right:none;"></td>
+                                                    <td style="width: 13%; border-top:1px solid #772800; border-right:1px solid #772800;">
+                                                        <img src="" alt="달콤바삭크룽지" style="width:80px; height:80px;">
+                                                    </td>
+                                                    <td style="width: 27%; border-top:1px solid #772800;"><a href="#"><p style="margin-left:45px;">달콤바삭크룽지</p></a>
+                                                        <span class="price" style="margin-left:45px;">88,900원</span>
+                                                    </td>
+                                                    <td class="cart_list_option" style="width: 27%; border:1px solid #772800;">
+                                                        <p>상품 주문 수량: 1개</p>
+                                                        <button class="cart_list_optionbtn">주문조건 추가/변경</button>
+                                                    </td>
+                                                    <td style="width: 15%; border:1px solid #772800;"><span class="price">88,900원</span><br>
+                                                        <button class="cart_list_orderbtn">주문하기</button>
+                                                    </td>
+                                                    <td style="width: 15%; border:1px solid #772800; border-right:none; font-weight:bold;">무료</td>
+                                                </tr>
+                                            </tbody>
+                                        </form>
+                                    </table>
+                                </section>
+                            </section>
+                        </section>
+                    </div>
+                </div>
+
+                <div class="accordion_item open">
+                    <button>
+                        결제수단
+                    </button>
+                    <div class="accordion_content">
+                        <form action="#">
+                            <!-- 결제방법 -->
+                            <article class="payment">
+                                <div class="creditcard">
+                                    <span>신용카드</span>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="payment" value="type1">신용카드 결제
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="payment" value="type2">체크카드 결제
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="account">
+                                    <span>계좌이체</span>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="payment" value="type3">실시간 계좌이체
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="payment" value="type4">무통장 입금
+                                        </label>
+                                    </p>
+                                </div>
+                                <div class="other">
+                                    <span>기타</span>
+                                    <p>
+                                        <label>
+                                            <input type="radio" name="payment" value="type4">휴대폰 결제
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="payment" value="type5" checked>카카오페이
+                                        </label>
+                                    </p>
+                                </div>
+                            </article>
+                            <!-- 경고 -->
+                            <article class="alert">
+                                <ul>
+                                    <li><span>Bake Lab의 모든 판매자는 안전거래를 위해 구매금액, 결제수단에 상관없이 모든거래에 대하여 Bake Lab 유한책임회사의 구매안전서비스(에스크로)를 제공하고 있습니다.</span></li>
+                                    <li><span>Bake Lab 유한책임회사의 전자금융거래법에 의해 결제대금예치업 등록번호는 01-234-456789 입니다.</span></li>
+                                    <li><span>등록여부는 금융감독원 홈페이지(www.fss.or.kr)의 업무자료>인허가업무안내>전자금융업등록현황에서 확인하실수 있습니다.</span></li>
+                                </ul>
+                            </article>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 결제 상세 영역 -->
+        <div class="area_aside">
+            <div class="accordion">
+                <div class="accordion_item open">
+                    <button>
+                        결제 상세
+                    </button>
+                    <div class="accordion_content">
+                        <form action="#">
+                            <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                            <div class="final">
+                                <table>
+                                    <tr>
+                                        <td>총</td>
+                                        <td id="totalCount">2 건</td>
+                                    </tr>
+                                    <tr>
+                                        <td>상품금액</td>
+                                        <td>14,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>할인금액</td>
+                                        <td>-1,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>배송비</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>전체주문금액</td>
+                                        <td>13,000</td>
+                                    </tr>
+                                </table>
+                                <input id="pay" type="submit" value="결제하기">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+</body>
+</html>

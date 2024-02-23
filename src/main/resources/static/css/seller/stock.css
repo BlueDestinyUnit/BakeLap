@@ -1,0 +1,37 @@
+.Contain{
+    width: 850px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+stock{
+    margin-top: 5px;
+}
+th{
+    height: 50px;
+    border: solid 1px #772800;
+}
+th:nth-child(3){
+    width: 70px;
+}
+td{
+    border: solid 1px #772800;
+}
+tr td:first-child{
+    text-align: center;
+}
+tr td:nth-child(2) {
+    width: 500px;
+    padding-left: 10px;
+}
+tr td:nth-child(3) {
+    text-align: center;
+}
+tr td:nth-child(4) {
+    width: 100px;
+    padding-left: 10px;
+}
+
+tr td:nth-child(5) {
+    width: 100px;
+    padding-left: 10px;
+}

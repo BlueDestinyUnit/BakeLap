@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../static/css/user/reg.css" th:href="@{/css/user/reg.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+        <section class="Box1">
+            <h1 class="Congratulations">Congratulations!</h1>
+            <section class="Circle">
+                <div class="circle1">
+                    <p class="STEP1">
+                        STEP1
+                    </p>
+                    <p class="info_input">회원정보입력</p>
+                </div>
+                <p class="right-arrow"><i class="fa-solid fa-chevron-right"></i></p>
+                <div class="circle2">
+                    <p class="STEP2">
+                        STEP2
+                    </p>
+                    <p class="join_comp">가입 완료</p>
+                </div>
+            </section>
+
+            <section class="greet">
+                <h1>고객님의</h1><p>가입을 <span>진심으로</span> 환영합니다.</p>
+            </section>
+            <form name="join_form" id="jaoin_form">
+                <p class="final_btn">
+                    <a href="/"><button type="button" class="btn">메인으로 가기</button></a>
+                    <a href="/user/login"><button type="button" class="btn">로그인 하러 가기</button></a>
+                </p>
+            </form>
+        </section>
+    </section>
+</main>
+</body>
+</html>

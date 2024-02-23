@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bread</title>
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/story.css" th:href="@{/css/story.css}">
+
+</head>
+<body>
+    <main>
+        <section>
+            <header th:replace="layout/header :: header"></header>
+            <aside th:replace="layout/side_bar :: side_bar"></aside>
+        <section class="story">
+            <img src="/image/story.jpg" alt="story">
+        </section>
+
+
+
+        </section>
+    </main>
+</body>
+</html>

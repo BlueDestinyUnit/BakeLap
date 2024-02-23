@@ -1,0 +1,171 @@
+@font-face {
+    font-family: 'MaruBuri-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+    *{margin:0; padding:0;}
+    a{text-decoration: none; color:#772800;}
+    ul,li{list-style: none;}
+    input{border:none;}
+
+/* body영역 */
+      .Box1{
+        margin:0 auto;
+        margin-top:100px;
+        margin-bottom:90px;
+        background-color: #fdfdfd;
+        width:800px;
+        height:800px;
+        box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
+        border-radius: 30px;
+      }
+      
+      .Congratulations {
+        padding-top:80px;
+        width: 460px;
+        height: 144px;
+        margin: 36px auto;
+        opacity: 0.1;
+        font-family: MaruBuri;
+        font-size: 58.5px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #bc734e;
+      }
+    
+    .Circle
+    {
+      display: flex;
+      justify-content: center;
+      margin:0 auto;
+    }
+    
+      .circle1
+      {
+          width: 150px;
+          height: 150px;
+          border-radius: 100px;
+          text-align: center;
+          background-color: #fcebe2;
+      }
+
+        .STEP1 {
+          width: 62px;
+          height: 28px;
+          font-family: MaruBuri;
+          font-size: 21px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #772800;
+          margin:60px auto;
+        }
+    
+        .info_input {
+          padding-top : 18px;
+          font-family: MaruBuri;
+          font-size: 16px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color : #bc734e;
+        }
+    
+        .circle2
+        {
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            text-align: center;
+            background-color: #772800;
+        }
+    
+      .STEP2 {
+        width: 62px;
+        height: 28px;
+        font-family: MaruBuri;
+        font-size: 21px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #fcebe2;
+        margin:60px auto;
+      }
+    
+      .join_comp {
+        padding-top : 18px;
+        font-family: MaruBuri;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color : #bc734e;
+      }
+      
+      .right-arrow{
+          width: 10px;
+          height: 20px;
+          font-family: MaruBuri;
+          font-size: 30px;
+          font-weight: bold;
+          margin:51px 34px;
+          color:#bc734e;
+      }
+
+      .greet {
+        font-family: MaruBuri;
+        font-size: 28px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: center;
+        color: #772800;
+      }
+
+      .greet > h1 {margin-top:80px;}
+
+      .greet > p {margin-top:5px;}
+
+      .greet > p > span{font-weight: bold;}
+
+      form {
+        width: 600px;
+        margin: 60px auto;
+      }
+
+      form button {
+        padding: 16px 33px 16px 33px;
+        border-radius: 33px;
+        background-color: #772800;
+        border: none;
+        font-family: MaruBuri;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        text-align: left;
+        color: #fcebe2;
+        margin:auto 5px;
+    }
+
+    form .final_btn {
+      text-align: center;
+    }
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+        <setting name="defaultFetchSize" value="100"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias alias="UserVO" type="com.bread.bakelab.domains.vo.UserVO" />
+        <typeAlias alias="ProductRegisVO" type="com.bread.bakelab.domains.vo.ProductRegisVO" />
+        <typeAlias alias="ProductVO" type="com.bread.bakelab.domains.vo.ProductVO" />
+        <typeAlias alias="ImagesVO" type="com.bread.bakelab.domains.vo.ImagesVO" />
+        <typeAlias alias="ProductDTO" type="com.bread.bakelab.domains.dto.ProductDTO" />
+        <typeAlias alias="OrderDTO" type="com.bread.bakelab.domains.dto.OrderDTO" />
+        <typeAlias alias="BasketVO" type="com.bread.bakelab.domains.vo.BasketVO" />
+        <typeAlias alias="OrderVO" type="com.bread.bakelab.domains.vo.OrderVO" />
+        <typeAlias alias="PaymentVO" type="com.bread.bakelab.domains.vo.PaymentVO" />
+        <typeAlias alias="StockVO" type="com.bread.bakelab.domains.vo.StockVO" />
+        <typeAlias alias="PurchaseVO" type="com.bread.bakelab.domains.vo.PurchaseVO" />
+        <typeAlias alias="ReviewVO" type="com.bread.bakelab.domains.vo.ReviewVO" />
+    </typeAliases>
+</configuration>
+
+

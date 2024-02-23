@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../../static/css/user/mypage/orderList.css" th:href="@{/css/user/mypage/orderList.css}">
+    <script src="../../../static/js/user/mypage/orderList.js" th:src="@{/js/user/mypage/orderList.js}" defer></script>
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+        <section class="basket">
+            <section class="cart-title">
+                <h1 class="Box-title">구매목록</h1>
+            </section>
+            <section class="Box1">
+                <section class="cart">
+                    <div class="cart_information">
+                        <ul>
+                            <li>구매목록입니다.</li>
+                            <li > 총 구매 가격은 <span th:text="${userTotalPrice}"></span> </li>
+
+                        </ul>
+                    </div>
+                    <div id="pagination-buttons">
+                    </div>
+                    <table class="cart_list">
+                        <thead style="height:40px;">
+                        <tr>
+                            <td>이미지</td>
+                            <td colspan="2">상품정보</td>
+                            <td>물품/배송지/구매시간</td>
+                            <td>상품금액</td>
+                            <td>주문번호</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr class="cart_list_detail">
+
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="3">
+
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </section>
+            </section>
+        </section>
+    </section>
+
+</main>
+
+</body>
+</html>

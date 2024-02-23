@@ -1,0 +1,71 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bread.bakelab.mapper.ProductMapper">
+
+    <select id="get_all_products" resultMap="get_all_products_info">
+        SELECT L.product_name, L.price, L.context, L.nutrition, L.allergy, L.category, L.stock, L.regis_date, I.image
+        FROM bakelab.bread_list L
+        INNER JOIN bakelab.bread_images I
+        ON L.product_name = I.product_name
+        <where>
+            <if test="search != '' and search != null">
+                <![CDATA[
+                    L.product_name LIKE CONCAT('%',${search},'%')
+                ]]>
+            </if>
+            <if test="category != '' and category != null">
+                L.category = #{category}
+            </if>
+        </where>
+    </select>
+
+    <select id="get_product" resultMap="get_all_products_info">
+        SELECT L.*, I.image
+        FROM bakelab.bread_list L
+        INNER JOIN bakelab.bread_images I
+        ON L.product_name = I.product_name
+        WHERE L.product_name = #{product_name}
+    </select>
+
+    <update id="update_product" parameterType="ProductVO">
+        UPDATE bakelab.bread_list AS L
+        SET
+        L.price = #{price}, L.context = #{context}, L.nutrition = #{nutrition}, L.allergy = #{allergy},
+        L.category = #{category}, L.stock = #{stock}
+        WHERE L.product_name = #{product_name}
+        LIMIT 1 ;
+    </update>
+
+    <resultMap id="get_all_products_info" type="ProductDTO">
+        <id column="product_name" property="productVO.product_name" />
+        <association property="productVO" javaType="ProductVO">
+            <result column="product_name" property="product_name" />
+            <result column="price" property="price" />
+            <result column="context" property="context" />
+            <result column="nutrition" property="nutrition" />
+            <result column="allergy" property="allergy" />
+            <result column="category" property="category" />
+            <result column="stock" property="stock" />
+            <result column="regis_date" property="regis_date" />
+        </association>
+        <collection property="imagesVO" ofType="ImagesVO" javaType="list">
+            <result column="no" property="no" />
+            <result column="product_name" property="product_name" />
+            <result column="image" property="image" />
+        </collection>
+    </resultMap>
+
+    <delete id="delete_images" parameterType="ImagesVO">
+        DELETE FROM bakelab.bread_images
+        WHERE product_name = #{product_name}
+    </delete>
+
+    <update id="update_product_stock"  parameterType="java.util.Map">
+        UPDATE `bread_list`
+        SET `stock` = `stock` - #{count}
+        WHERE product_name = #{product_name}
+    </update>
+
+
+</mapper>

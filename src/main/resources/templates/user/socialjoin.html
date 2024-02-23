@@ -1,0 +1,122 @@
+
+
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JOIN</title>
+  <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+  <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+  <link rel="stylesheet" href="../../static/css/user/join.css" th:href="@{/css/user/join.css}">
+  <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
+  <script src="../../static/js/user/verified_tel.js" th:src="@{/js/user/verified_tel.js}" defer></script>
+  <script src="../../static/js/user/address.js" th:src="@{/js/user/address.js}" defer></script>
+  <script src="../../static/js/user/socialjoin.js" th:src="@{/js/user/socialjoin.js}" defer></script>
+
+</head>
+<body>
+<main>
+  <section>
+    <header th:replace="layout/header :: header"></header>
+    <aside th:replace="layout/side_bar :: side_bar"></aside>
+    <section class="Box1">
+      <h1 class="JOIN">JOIN</h1>
+      <section class="Circle">
+        <div class="circle1">
+          <p class="STEP1">
+            STEP1
+          </p>
+          <p class="info_input">회원정보입력</p>
+        </div>
+        <p class="right-arrow"><i class="fa-solid fa-chevron-right"></i></p>
+        <div class="circle2">
+          <p class="STEP2">
+            STEP2
+          </p>
+          <p class="join_comp">가입 완료</p>
+        </div>
+      </section>
+      <hr>
+
+      <section class="join">
+
+        <form name="join_form" th:action="@{/user/socialjoin}" method="post" id="jaoin_form" onsubmit="return form_check()">
+          <p>
+            <label for="u_name">이름</label>
+            <input type="text" name="name" id="u_name">
+            <br>
+            <span class="err_name"></span>
+          </p>
+          <p>
+            <label for="u_id">아이디</label>
+            <input type="text" name="id" id="u_id" readonly th:value="${userEmail}">
+            <input type="hidden" name="id_verified" id="id_verified" value="none">
+            <button type="button" name="check_id">아이디 중복확인</button>
+            <br>
+            <span class="err_id">* 4~12글자까지만 입력 가능합니다.</span>
+          </p>
+          <p>
+            <label for="pwd">비밀번호</label>
+            <input type="text" name="pw" id="pwd">
+            <br>
+            <span class="err_pwd">* 4~12글자까지만 입력 가능합니다.</span>
+          </p>
+          <p>
+            <label for="repwd">비밀번호 확인</label>
+            <input type="text" name="repwd" id="repwd">
+            <br>
+            <span class="err_repwd"></span>
+          </p>
+          <p>
+            <label for="postalCode">우편번호</label>
+            <input type="text" name="address" id="postalCode"  placeholder="우편번호" readonly>
+            <button type="button" onclick="sample4_execDaumPostcode()">주소검색</button> <br>
+          </p>
+          <p>
+            <label for="addr1">주소</label>
+            <input type="text" name="address" id="addr1" placeholder="기본주소" readonly>
+            <label for="addr2"></label>
+            <input type="text" name="address" id="addr2" placeholder="상세주소">
+          </p>
+            <input type="hidden" name="email" id="email" value="" th:value="${userEmail}">
+          <p>
+            <label for="mobile">전화번호</label>
+            <input type="text" name="tel" id="mobile">
+            <button type="button" id="verify_code_get_btn">인증번호 요청</button>
+            <br>
+            <span class="err_mobile">* '-'없이 숫자만 입력</span>
+          </p>
+          <p>
+            <label for="mobile">인증번호</label>
+            <input type="text" name="mobile" id="verify_code_input" >
+            <button type="button" id="verify_code_confirm_btn">인증번호 확인</button>
+            <input type="hidden" name="phone_verified" id="phone_verified">
+            <input type="hidden" name="role" value="USER">
+          </p>
+          <p>
+            <input type="checkbox" name="agree" id="agree">
+            <label for="agree">약관 동의</label>
+            <br>
+            <span class="err_agree">* 필수</span>
+          </p>
+          <p class="final_btn">
+            <!--      input으로 바꿔야함                <a href="../LOGIN/LOGIN.html">
+            <button type="button" class="btn">이전으로</button></a>-->
+
+            <a href="/user/login"><button type="button" class="btn">이전으로</button></a>
+            <a href="/user/reg" ><button type="submit" name="submitBtn" class="btn">회원가입</button></a>
+          </p>
+        </form>
+      </section>
+    </section>
+
+  </section>
+</main>
+
+</body>
+</html>

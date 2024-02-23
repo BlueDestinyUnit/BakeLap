@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find_id</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../../static/css/user/find/find_id_view.css" th:href="@{/css/user/find/find_id_view.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+
+        <section class="Box1">
+            <section class="innerBox1">
+                <h1 class="Find_id">Find_id</h1>
+                <section class="Find_id_com">
+                    <h1 th:text="${name}">홍길동</h1>님의<p>ID는 <span>[</span><span th:text="${userid}">Gildong2</span><span>]</span> 입니다.</p>
+                </section>
+                <form name="join_form" id="jaoin_form">
+                    <p class="final_btn">
+                        <a href="/user/login"><button type="button" class="btn">로그인 하기</button></a>
+                        <a href="/user/find/pwd"><button type="button" class="btn">비밀번호 찾기</button></a>
+                    </p>
+                </form>
+            </section>
+        </section>
+    </section>
+</main>
+</body>
+</html>
