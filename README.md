@@ -47,6 +47,9 @@
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0003.jpg)
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0004.jpg)
 
+## ERD
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/BakeLab_ERD,png)
+
 ## 메인 페이지
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0008.jpg)
 ## 로그인 및 회원가입
