@@ -3,10 +3,27 @@
 ## [메뉴얼](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab.pdf)
 
 ## 개발인원 및 역할
-성환 -  DB 관계도 설계, 프로젝트 기본 틀 제작, 상품 등록 기능 구현, 장바구니 기능 구현, 결제 기능 구현, 검색 기능 구현
-민정 -  회원가입
-경민 -  마이페이지, 리뷰
-정민 -  기획, 디자인, 프론트 엔드
+
+- **성환**: 
+  - DB 관계도 설계
+  - 프로젝트 기본 틀 제작
+  - 상품 등록 기능 구현
+  - 장바구니 기능 구현
+  - 결제 기능 구현
+  - 검색 기능 구현
+
+- **민정**: 
+  - 회원가입
+  
+- **경민**: 
+  - 마이페이지
+  - 리뷰
+  
+- **정민**: 
+  - 기획
+  - 디자인
+  - 프론트 엔드
+
 
 ## 스토리
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0002.jpg)
