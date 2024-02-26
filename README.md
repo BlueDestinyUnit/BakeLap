@@ -43,9 +43,29 @@
 
 ### 템플릿 엔진
 - Thymeleaf
-### FLOW 및 FUNCTION
+## FLOW 및 FUNCTION
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0003.jpg)
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0004.jpg)
+
+## 메인 페이지
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0008.jpg)
+## 로그인 및 회원가입
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0009.jpg)
+## 유저 MyPage
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0010.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0011.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0012.jpg)
+## 상품 상세 정보 및 리뷰
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0013.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0015.jpg)
+## 장바구니
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0014.jpg)
+## 결제
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0016.jpg)
+## 상품 등록 및 수정
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0017.jpg)
+## 상품 통계
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0018.jpg)
 
 ### 프로젝트 상태
 - 기본적으로 구매자만 회원가입이 가능합니다.
