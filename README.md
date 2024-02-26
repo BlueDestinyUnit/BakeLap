@@ -1,7 +1,5 @@
 ## [BakeLab 빵 쇼핑몰 바로가기](http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080)
 
-## [메뉴얼](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab.pdf)
-
 ## 개발인원 및 역할
 
 - **성환**: 
