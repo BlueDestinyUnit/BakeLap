@@ -45,14 +45,9 @@
 
 ### 템플릿 엔진
 - Thymeleaf
-
-### 내가 수행한 역할
-- DB 관계도 설계
-- 프로젝트 기본 틀 제작
-- 상품 등록 기능 구현
-- 장바구니 기능 구현
-- 결제 기능 구현
-- 검색 기능 구현
+### FLOW 및 FUNCTION
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0003.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0004.jpg)
 
 ### 프로젝트 상태
 - 기본적으로 구매자만 회원가입이 가능합니다.
