@@ -2,6 +2,10 @@
 
 ## [메뉴얼](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab.pdf)
 
+## 스토리
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0002.jpg)
+
+
 ## 개발기간
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0007.jpg)
 
