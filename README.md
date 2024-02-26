@@ -2,6 +2,9 @@
 
 ## [메뉴얼](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab.pdf)
 
+## 개발기간
+https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0007.jpg
+
 ### 사용한 기술
 - HTML
 - CSS
