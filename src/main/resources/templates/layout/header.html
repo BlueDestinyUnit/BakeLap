@@ -36,7 +36,7 @@
                 <a sec:authorize="authenticated" href="/user/mypage/info" class="icon1 auth-true"><span><i class="fa-regular fa-user"></i></span></a>
             </li>
             <li>
-                <a href="/mypage/basket" class="icon2"><span><i class="fa-solid fa-bag-shopping"></i></span></a>
+                <a sec:authorize="!hasRole('SELLER') and !isAuthenticated()" href="/mypage/basket" class="icon2"><span><i class="fa-solid fa-bag-shopping"></i></span></a>
             </li>
             <li sec:authorize="authenticated">
                 <form th:action="@{/user/logout}" method="post" >

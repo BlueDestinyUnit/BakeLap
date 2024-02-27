@@ -7,6 +7,7 @@ import com.bread.bakelab.service.SMSService;
 import com.bread.bakelab.service.UserMailService;
 import com.bread.bakelab.service.UserService;
 import lombok.extern.log4j.Log4j2;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -195,10 +196,35 @@ public class UserController {
 
     /******************* 휴대폰 인증 ***********************/
 
-    // 인증번호 요청 시 인증번호를 생성
+    // 인증번호 요청 시 인증번호를 생성 -> 휴대폰 인증은 유료서비스인 관계로 JSON으로 다시 인증키를 보낼것임
+//    @ResponseBody
+//    @GetMapping("/sms/key")
+//    public boolean get_verifyKey(
+//            HttpSession session,
+//            @RequestParam String phoneNumber
+//    ){
+//        session.setAttribute("phone_verified", false);
+//        // 이미 한번 인증 요청을 해서, 인증번호를 받은 적이 있다면
+//        if(session.getAttribute("VERIFY_KEY") != null){
+//            log.warn("이미 VERIFY_KEY가 존재하므로, 기존 코드를 삭제합니다");
+//            session.removeAttribute("VERIFY_KEY");
+//        }
+//        // 새로 VERIFY_KEY를 발급받음
+//        String VERIFY_KEY = smsService.get_verify_key(phoneNumber);
+//        // 발급에 실패했다면
+//        if(VERIFY_KEY == null){
+//            log.error("VERIFY_KEY가 생성되지 않았음 => SMS 요청 실패!");
+//            return false;
+//        }
+//        // 발급에 성공했다면
+//        log.info("VERIFY_KEY가 생성되었음 => " + VERIFY_KEY);
+//        session.setAttribute("VERIFY_KEY", VERIFY_KEY);
+//        return true;
+//    }
+
     @ResponseBody
     @GetMapping("/sms/key")
-    public boolean get_verifyKey(
+    public String get_verifyKey(
             HttpSession session,
             @RequestParam String phoneNumber
     ){
@@ -210,16 +236,21 @@ public class UserController {
         }
         // 새로 VERIFY_KEY를 발급받음
         String VERIFY_KEY = smsService.get_verify_key(phoneNumber);
+        JSONObject jsonObject = new JSONObject();
+
         // 발급에 실패했다면
         if(VERIFY_KEY == null){
             log.error("VERIFY_KEY가 생성되지 않았음 => SMS 요청 실패!");
-            return false;
+            jsonObject.put("VERIFY_KEY","failure");
+            return jsonObject.toString();
         }
         // 발급에 성공했다면
         log.info("VERIFY_KEY가 생성되었음 => " + VERIFY_KEY);
         session.setAttribute("VERIFY_KEY", VERIFY_KEY);
-        return true;
+        jsonObject.put("VERIFY_KEY",VERIFY_KEY);
+        return jsonObject.toString();
     }
+
 
     // 사용자가 인증번호를 작성하고 인증 시도
     @ResponseBody

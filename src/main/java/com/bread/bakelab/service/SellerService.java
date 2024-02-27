@@ -103,10 +103,6 @@ public class SellerService {
         }
     }
 
-
-
-
-
     // 게시물 작성하기
     public boolean insert_product(ProductRegisVO productRegisVO){
         log.info(productRegisVO);

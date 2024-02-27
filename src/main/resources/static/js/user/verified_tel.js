@@ -5,7 +5,7 @@ const verifyCodeGetBtn=document.getElementById('verify_code_get_btn');
 verifyCodeGetBtn.onclick=get_verify_code;
 verifyCodeConFirmBtn.onclick=check_verify_code;
 
-// 인증번호받기 버튼 눌렀을 때 인증번호 받아오기
+// 인증번호받기 버튼 눌렀을 때 인증번호 받아오기 (실제 휴대폰인증은 유료 서비스이기떄문에 브라우저 개발자 도구 콘솔창에서 받도록 함)
 function get_verify_code(){
     // 번호 정규식
     let regex_mobile = /^[0-9]{10,11}$/g;
@@ -22,7 +22,7 @@ function get_verify_code(){
         .then(object => {
             if(object){
                 alert("인증번호 발송 완료");
-                console.log('인증번호를 생성 성공!');
+                console.log('인증번호를 생성 성공! : '+ JSON.stringify(object));
             }else{
                 alert("오류: 인증번호 발급 실패");
                 console.log('인증번호를 생성 실패!');
