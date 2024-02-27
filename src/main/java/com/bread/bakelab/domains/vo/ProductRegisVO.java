@@ -25,4 +25,11 @@ public class ProductRegisVO {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate regis_date;
     private List<MultipartFile> images;
+
+    @Override
+    public String toString() {
+        return "ProductRegisVO{" +
+                "images=" + images +
+                '}';
+    }
 }

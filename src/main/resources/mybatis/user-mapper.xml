@@ -8,12 +8,12 @@
 
     <!--  회원 가입   -->
     <insert id="join_user" parameterType="UserVO">
-        INSERT INTO `user`
+        INSERT INTO `bakelab`.`user`
         VALUES (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{address}, #{role}, default)
     </insert>
     <!--소셜 회원가입-->
     <insert id="social_join_user" parameterType="UserVO">
-        INSERT INTO `user`
+        INSERT INTO `bakelab`.`user`
         VALUES (#{id}, #{pw}, #{name}, #{email}, #{tel}, #{address}, #{role}, 'KAKAO')
     </insert>
 

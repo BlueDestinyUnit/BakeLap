@@ -1,43 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="ko"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org/"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Title</title>
-  <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
-  <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
-  <link rel="stylesheet" href="../../static/css/seller/regist.css" th:href="@{/css/seller/regist.css}">
-  <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
-  <script src="../../static/js/seller/regist.js" th:src="@{/js/seller/regist.js}" defer></script>
-  <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
-  <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 등록</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../static/css/seller/regist.css" th:href="@{/css/seller/regist.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../static/js/seller/regist.js" th:src="@{/js/seller/regist.js}" defer></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
+    <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
 </head>
 <body>
 <main>
-  <section>
-    <header th:replace="layout/header :: header"></header>
-    <aside th:replace="layout/side_bar :: side_bar"></aside>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
 
-    <section id="container">
-      <form th:action="@{/seller/regist}" method="post" enctype="multipart/form-data">
-        <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-        제품명:<input type="text" name="product_name"> </br>
-        가격: <input type="text" name="price"> </br>
-        내용: <input type="text" name="context"> </br>
-        영양정보: <input type="text" name="nutrition"> </br>
-        알러지 : <input type="text" name="allergy"> </br>
-        카테고리 : <input type="text" name="category"> </br>
-        재고 : <input type="text" name="stock"> </br>
-        파일:  <input type="file" name="images" multiple>
-        <input type="hidden" name="regis_date">
-        <button>확인</button>
-      </form>
+        <section class="regist-container">
+            <form th:action="@{/seller/regist}" method="post" enctype="multipart/form-data">
+                <input type="hidden" id="csrfToken" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                <label for="product_name">
+                    <span>제품명</span>
+                </label>
+                <input id="product_name" type="text" name="product_name">
+                <label for="price">
+                    <span>가격</span>
+                </label>
+                <input id="price" type="text" name="price">
+                <label for="context">
+                    <span>내용</span>
+                </label>
+                <textarea type="text" name="context" id="context"></textarea>
+                <label for="nutrition">
+                    <span>영양정보:</span>
+                </label>
+                <textarea type="text" name="nutrition" id="nutrition"></textarea>
+                <label for="allergy">
+                    <span>알러지</span>
+                </label>
+                <textarea type="text" name="allergy" id="allergy"></textarea>
+                <label for="category">
+                    <span>카테고리</span>
+                </label>
+                <input id="category" type="text" name="category">
+                <label for="stock">
+                    <span>재고</span>
+                </label>
+                <input id="stock" type="text" name="stock">
+                <label for="images">
+                    <span>파일</span>
+                </label>
+                <input id="images" type="file" name="images" multiple>
+                <input type="hidden" name="regis_date">
+                <input type="submit" value="확인">
+            </form>
+        </section>
     </section>
-  </section>
 </main>
 
 

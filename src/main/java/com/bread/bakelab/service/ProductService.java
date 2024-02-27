@@ -59,7 +59,6 @@ public class ProductService {
         productMapper.update_product_stock(count,product_name);
     }
 
-
     // 각 상품 이미지를 다운로드 해주는 서비스
     public ResponseEntity<Resource> get_product_image_file(String fileName) throws Exception{
         Resource resource = new FileSystemResource(IMAGE_FILE_PATH + fileName);

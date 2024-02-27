@@ -2,8 +2,10 @@ package com.bread.bakelab.service;
 
 import com.bread.bakelab.config.properties.FilePathProperties;
 import com.bread.bakelab.domains.dto.ImagesDTO;
+import com.bread.bakelab.domains.dto.ProductDTO;
 import com.bread.bakelab.domains.vo.ImagesVO;
 import com.bread.bakelab.domains.vo.ProductRegisVO;
+import com.bread.bakelab.domains.vo.ProductVO;
 import com.bread.bakelab.domains.vo.StockVO;
 import com.bread.bakelab.mapper.SellerMapper;
 import lombok.extern.log4j.Log4j2;
@@ -25,16 +27,19 @@ import java.util.UUID;
 public class SellerService {
     private final FilePathProperties filePathProperties;
 
-
-
     private String SAVE_PATH;
+
+    private String IMAGE_FILE_PATH;
 
     @Autowired
     private SellerMapper sellerMapper;
+    @Autowired
+    private ProductService productService;
 
+    @Autowired
     public SellerService(FilePathProperties filePathProperties) {
         this.filePathProperties = filePathProperties;
-        this.SAVE_PATH = filePathProperties.getSavePath();
+        this.IMAGE_FILE_PATH = filePathProperties.getImageFilePath();
     }
 
     // 이미지 저장
@@ -62,6 +67,44 @@ public class SellerService {
         sellerMapper.post_images(imagesVOS);
         return true;
     }
+
+    public void update_product(ProductRegisVO productRegisVO){
+        ProductVO productVO = new ProductVO.Builder()
+                .withProductName(productRegisVO.getProduct_name())
+                .withPrice(productRegisVO.getPrice())
+                .withContext(productRegisVO.getContext())
+                .withNutrition(productRegisVO.getNutrition())
+                .withAllergy(productRegisVO.getAllergy())
+                .withCategory(productRegisVO.getCategory())
+                .withStock(productRegisVO.getStock())
+                .build();
+//        productVO.setProduct_name(productRegisVO.getProduct_name());
+//        productVO.setCategory(productRegisVO.getCategory());
+//        productVO.setPrice(productRegisVO.getPrice());
+//        productVO.setAllergy(productRegisVO.getAllergy());
+//        productVO.setNutrition(productRegisVO.getNutrition());
+//        productVO.setContext(productRegisVO.getContext());
+//        productVO.setStock(productRegisVO.getStock());
+        productService.update_product(productVO);
+        if(productRegisVO.getImages().get(0).isEmpty() == false){
+            String product_name = productVO.getProduct_name();
+            ProductDTO productDTO = productService.get_product(product_name);
+            List<ImagesVO> imagesVOS = productDTO.getImagesVO();
+            imagesVOS.forEach( imagesVO -> {
+                String FILE_PATH = IMAGE_FILE_PATH + imagesVO.getImage();
+                File file = new File(FILE_PATH);
+                boolean deleteFile = file.delete();
+            });
+            // ProductRegisVO에 필요한 정보 설정
+            ImagesDTO imagesDTO = new ImagesDTO();
+            imagesDTO.setImages(productRegisVO.getImages());
+            productService.delete_images(product_name);
+            insert_image(imagesDTO,product_name);
+        }
+    }
+
+
+
 
 
     // 게시물 작성하기

@@ -3,7 +3,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.bread.bakelab.mapper.SellerMapper">
     <insert id="post_product" parameterType="ProductVO">
-        INSERT INTO `bread_list`
+        INSERT INTO `bakelab`.`bread_list`
         VALUES (#{product_name}, #{price}, #{context},#{nutrition}, #{allergy}, #{category}, #{stock}, DEFAULT)
     </insert>
 
@@ -13,7 +13,7 @@
             SELECT LAST_INSERT_ID()
         </selectKey>
 
-        INSERT INTO `bread_images` VALUES
+        INSERT INTO `bakelab`.`bread_images` VALUES
         <foreach collection="list" item="images" separator=",">
             (NULL, #{images.product_name}, #{images.image})
         </foreach>
@@ -21,7 +21,7 @@
 
     
     <insert id="post_stock" parameterType="StockVO">
-        INSERT INTO `sell_stock` VALUES(#{product_name}, DEFAULT)
+        INSERT INTO `bakelab`.`sell_stock` VALUES(#{product_name}, DEFAULT)
     </insert>
 
     <update id="update_sell_stock" parameterType="java.util.Map">

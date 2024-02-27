@@ -53,14 +53,11 @@ public class SellerController {
     public void get_stock(Model model) {
         List<StockVO> stockVOS = sellerService.find_stock();
         List<StockDTO> stockDTOS = new ArrayList<>();
-        log.info(stockVOS);
-        log.info(stockDTOS);
 
         stockVOS.forEach(stockVO -> {
             ProductDTO productDTO = productService.get_product(stockVO.getProduct_name());
             log.info(productDTO);
             String image = productDTO.getImagesVO().get(0).getImage();
-
 
             StockDTO stockDTO = new StockDTO();
             stockDTO.setStockVO(stockVO);
@@ -77,33 +74,7 @@ public class SellerController {
     // 상품 정보 바꾸기
     @PostMapping("/seller/update")
     public String post_update(ProductRegisVO productRegisVO){
-        log.info(productRegisVO);
-        ProductVO productVO = new ProductVO();
-        productVO.setProduct_name(productRegisVO.getProduct_name());
-        productVO.setCategory(productRegisVO.getCategory());
-        productVO.setPrice(productRegisVO.getPrice());
-        productVO.setAllergy(productRegisVO.getAllergy());
-        productVO.setNutrition(productRegisVO.getNutrition());
-        productVO.setContext(productRegisVO.getContext());
-        productVO.setStock(productRegisVO.getStock());
-        productService.update_product(productVO);
-
-        if(productRegisVO.getImages() != null){
-            String product_name = productVO.getProduct_name();
-            ProductDTO productDTO = productService.get_product(product_name);
-            List<ImagesVO> imagesVOS = productDTO.getImagesVO();
-            imagesVOS.forEach( imagesVO -> {
-                String FILE_PATH = IMAGE_FILE_PATH + imagesVO.getImage();
-                File file = new File(FILE_PATH);
-                boolean deleteFile = file.delete();
-            });
-            // ProductRegisVO에 필요한 정보 설정
-            ImagesDTO imagesDTO = new ImagesDTO();
-            imagesDTO.setImages(productRegisVO.getImages());
-            productService.delete_images(product_name);
-            sellerService.insert_image(imagesDTO,product_name);
-        }
-
+        sellerService.update_product(productRegisVO);
         return "redirect:/";
     }
 
