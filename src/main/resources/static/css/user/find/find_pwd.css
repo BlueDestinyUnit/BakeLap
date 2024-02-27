@@ -1,102 +1,92 @@
-@font-face {
-  font-family: 'MaruBuri-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-  *{margin:0; padding:0;}
-  a{text-decoration: none; color:#772800;}
-  ul,li{list-style: none;}
-  input{border:none;}
-
-
 /* Body 영역 */
-.Box1{
-  margin:0 auto;
-  margin-top:100px;
-  background-color: #fdfdfd;
-  width:800px;
-  height:600px;
-  box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
-  border-radius: 30px;
+.Box1 {
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: #fdfdfd;
+    width: 800px;
+    height: 600px;
+    box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
+    border-radius: 30px;
 }
 
-.innerBox1{
-  padding-top:25px;
+.innerBox1 {
+    padding-top: 25px;
 }
 
 .Find_id {
-  width: 241px;
-  height: 100px;
-  margin: 25px auto;
-  opacity: 0.1;
-  font-family: MaruBuri;
-  font-size: 58.5px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: center;
-  color: #bc734e;
+    width: 241px;
+    height: 100px;
+    margin: 25px auto;
+    opacity: 0.1;
+    font-family: MaruBuri;
+    font-size: 58.5px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #bc734e;
 }
 
 form {
-  width: 600px;
-  margin: 60px auto;
+    width: 600px;
+    margin: 60px auto;
 }
 
 form label {
-font-family: MaruBuri;
-font-size: 20px;
-font-weight: bold;
-font-stretch: normal;
-font-style: normal;
-line-height: normal;
-letter-spacing: normal;
-text-align: left;
-color: #772800;
+    font-family: MaruBuri;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #772800;
 }
 
 form input {
-  margin:7px;
-  padding: 16px 16px 16px 34px;
-  border-radius: 45px;
-  background-color: #fcebe2;
-  border: none;
+    margin: 7px;
+    padding: 16px 16px 16px 34px;
+    border-radius: 45px;
+    background-color: #fcebe2;
+    border: none;
 }
 
 form button {
-  padding: 16px 33px 16px 33px;
-  border-radius: 33px;
-  background-color: #772800;
-  border: none;
-  font-family: MaruBuri;
-  font-size: 16px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #fcebe2;
-  margin:auto 5px;
+    padding: 16px 33px 16px 33px;
+    border-radius: 33px;
+    background-color: #772800;
+    border: none;
+    font-family: MaruBuri;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #fcebe2;
+    margin: auto 5px;
 }
-form p
-  {
-      margin: 20px auto;
-  }
+
+form p {
+    margin: 20px auto;
+}
+
 form p span {
-  font-size: 16px;
-  font-family: MaruBuri;
-  color: #bc734e;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
+    font-size: 16px;
+    font-family: MaruBuri;
+    color: #bc734e;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
 }
+
 form .final_btn {
-  margin-top: 50px;
-  text-align: center;
+    margin-top: 50px;
+    text-align: center;
 }

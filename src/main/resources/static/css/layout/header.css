@@ -5,59 +5,90 @@
     font-style: normal;
 }
 
-*{margin:0; padding:0;}
-a{text-decoration: none; color:#772800;}
-ul,li{list-style: none;}
-input{border:none;}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #772800;
+}
+
+ul, li {
+    list-style: none;
+}
+
+input {
+    border: none;
+}
 
 /* header영역 */
 .navbar {
+    width: 100%;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 8px 12px;
 }
 
-.navbar_icons {
+.navbar > .spring {
+    height: 100%;
+    width: 100%;
+    background-color: #4b1900;
+    flex: 1;
+}
+
+.navbar > .navbar-menu {
+    margin-right: 2rem;
+}
+
+.navbar-icons {
     list-style: none;
     display: flex;
-    padding-left: 0;
     margin-right: 130px;
 }
 
-.navbar_icons li {
+.navbar-icons li {
     padding: 8px 12px;
-    margin-top: 12.5px;
+    margin-top: 5px;
 }
 
-.icon3{
-    all:unset;
+.icon3 {
+    all: unset;
 
 }
-.icon3 > span{
+
+.icon3 > span {
     cursor: pointer;
-    color:#772800;
+    color: #772800;
 }
 
 /* search영역 */
 
-.search-box{
+.navbar > .navbar-menu > li {
+    position: relative;
+}
+
+.search-box {
     padding: 10px;
     position: absolute;
     top: 5%;
-    left: 86%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     height: 30px;
     background-color: #fff;
     border-radius: 30px;
     transition: 0.4s;
-    width:30px;
+    width: 30px;
 }
-.search-box:hover{
+
+.search-box:hover {
     box-shadow: 0px 0px .5px 1px #772800;
     width: 382px;
 }
-.search-btn{
+
+.search-btn {
     text-decoration: none;
     float: right;
     width: 30px;
@@ -69,14 +100,16 @@ input{border:none;}
     align-items: center;
     color: #772800;
 }
-.search-box:hover > .search-btn{
+
+.search-box:hover > .search-btn {
     background-color: #fff;
 }
-.search-txt{
+
+.search-txt {
     display: flex;
     padding: 0;
     width: 0px;
-    border:none;
+    border: none;
     background: none;
     outline: none;
     float: left;
@@ -84,7 +117,10 @@ input{border:none;}
     line-height: 30px;
     transition: .4s;
 }
-.search-box:hover > .search-txt{
+
+.search-box:hover > .search-txt {
     width: 240px;
     padding: 0 6px;
 }
+
+

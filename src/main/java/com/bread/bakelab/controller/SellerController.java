@@ -41,22 +41,26 @@ public class SellerController {
         log.info(productRegisVO);
     }
     // 상품 정보 뷰
-    @GetMapping("/product/update")
+    @GetMapping("/seller/update")
     public String get_update(@RequestParam(name = "product_name") String product_name, Model model) {
         ProductDTO productDTO = productService.get_product(product_name);
         model.addAttribute("productDTO", productDTO);
         log.info(productDTO);
-        return "seller/productUpdate";
+        return "seller/update";
     }
     // 전체 판매 수량
     @GetMapping("/seller/stock")
     public void get_stock(Model model) {
         List<StockVO> stockVOS = sellerService.find_stock();
         List<StockDTO> stockDTOS = new ArrayList<>();
+        log.info(stockVOS);
+        log.info(stockDTOS);
 
         stockVOS.forEach(stockVO -> {
             ProductDTO productDTO = productService.get_product(stockVO.getProduct_name());
+            log.info(productDTO);
             String image = productDTO.getImagesVO().get(0).getImage();
+
 
             StockDTO stockDTO = new StockDTO();
             stockDTO.setStockVO(stockVO);
@@ -71,7 +75,7 @@ public class SellerController {
     }
 
     // 상품 정보 바꾸기
-    @PostMapping("/product/update")
+    @PostMapping("/seller/update")
     public String post_update(ProductRegisVO productRegisVO){
         log.info(productRegisVO);
         ProductVO productVO = new ProductVO();

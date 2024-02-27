@@ -1,32 +1,20 @@
-@font-face {
-    font-family: 'MaruBuri-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-    *{margin:0; padding:0;}
-    a{text-decoration: none; color:#772800;}
-    ul,li{list-style: none;}
-    input{border:none;}
+/* body영역 */
 
-  
-  /* body영역 */
-  
-  .Box1{
-    margin:0 auto;
+.Box1 {
+    margin: 0 auto;
     background-color: #fdfdfd;
-    margin-top:55px;
-    width:800px;
-    height:600px;
-    box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
+    margin-top: 55px;
+    width: 800px;
+    height: 600px;
+    box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
     border-radius: 30px;
-  }
-  
-  .innerBox1{
-    padding-top:40px;
-  }
-  
-  .Reform_pwd {
+}
+
+.innerBox1 {
+    padding-top: 40px;
+}
+
+.Reform_pwd {
     width: 356px;
     height: 100px;
     margin: 25px auto;
@@ -40,34 +28,34 @@
     letter-spacing: normal;
     text-align: center;
     color: #bc734e;
-  }
+}
 
-  form {
+form {
     width: 600px;
     margin: 60px auto;
-  }
+}
 
-  form label {
-  font-family: MaruBuri;
-  font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  text-align: left;
-  color: #772800;
-  }
+form label {
+    font-family: MaruBuri;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #772800;
+}
 
-  form input {
-    margin:7px;
+form input {
+    margin: 7px;
     padding: 16px 16px 16px 34px;
     border-radius: 45px;
     background-color: #fcebe2;
     border: none;
 }
 
-  form button {
+form button {
     padding: 16px 33px 16px 33px;
     border-radius: 33px;
     background-color: #772800;
@@ -81,13 +69,14 @@
     letter-spacing: normal;
     text-align: left;
     color: #fcebe2;
-    margin:auto 5px;
+    margin: auto 5px;
 }
-form p
-    {
-        margin: 20px auto;
-    }
-  form p span {
+
+form p {
+    margin: 20px auto;
+}
+
+form p span {
     font-size: 16px;
     font-family: MaruBuri;
     color: #bc734e;
@@ -96,7 +85,8 @@ form p
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-  }
-  form .final_btn {
+}
+
+form .final_btn {
     text-align: center;
-  }
+}

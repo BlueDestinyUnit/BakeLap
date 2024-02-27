@@ -16,7 +16,7 @@ function get_all_reviews(){
 }
 
 // 리뷰 작성
-reviewForm.addEventListener("submit", e => {
+    reviewForm.addEventListener("submit", e => {
     const context = document.querySelector("textarea");
     if(context.value.trim() === ""){
         alert("리뷰가 작성 되지 않았습니다.")

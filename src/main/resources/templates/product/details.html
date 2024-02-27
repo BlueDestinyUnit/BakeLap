@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
     <link rel="stylesheet" href="../../static/css/product/details.css" th:href="@{/css/product/details.css}">
-    <script src="../../static/js/product/details_review.js" th:src="@{/js/product/details_review.js}" defer></script>
-    <script src="../../static/js/product/details_review_writeBtn.js" th:src="@{/js/product/details_review_writeBtn.js}" defer></script>
     <script src="../../static/js/product/details.js" th:src="@{/js/product/details.js}" defer></script>
+    <script src="../../static/js/product/details_review.js" th:src="@{/js/product/details_review.js}" defer></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
+    <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <div th:if="${#authorization.expression('isAuthenticated()')}">
+        <script src="../../static/js/product/details_review_writeBtn.js" th:src="@{/js/product/details_review_writeBtn.js}" defer></script>
+    </div>
+
 </head>
 <body>
 <main>
@@ -75,7 +80,7 @@
                         </form>
                     </div>
                     <div>
-                        <form th:action="@{/purchaseReady}" method="post" >
+                        <form id="purchaseBtn" th:action="@{/purchaseReady}" method="post" >
                             <button class="basket"><p>바로 구매하기 →</p></button>
                             <input type="hidden" id="csrfToken" th:if="${#authentication.principal != null}" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"> </br>
                             <input type="hidden" name="no" value="0"> </br>
@@ -85,7 +90,7 @@
                         </form>
                     </div>
                     <div>
-                        <form>
+                        <form id="authForm">
                             <button sec:authorize="authenticated" class="review" type="button"><p>리뷰 작성하기</p></button>
                         </form>
                     </div>

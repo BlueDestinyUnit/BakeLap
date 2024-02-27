@@ -41,7 +41,6 @@ public class CustomSecurityConfig {
                 .and()
                 .authorizeRequests()
                 .mvcMatchers("/seller/*").hasRole("SELLER")
-                .mvcMatchers("/product/update").hasRole("SELLER")
                 .mvcMatchers("/buy").hasRole("USER")
                 .mvcMatchers("/user/join").permitAll()
                 .mvcMatchers("/user/mypage/*").authenticated()

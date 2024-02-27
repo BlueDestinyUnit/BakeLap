@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 수정</title>
+
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../../css/seller/update.css" th:href="@{/css/seller/update.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
+    <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <script src="../../static/js/seller/update.js" th:src="@{/js/seller/update.js}" defer></script>
+</head>
+<body>
+
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+        <section class="update-container">
+            <h1><span th:text="${productDTO.productVO.product_name}"></span></h1>
+            <form th:action="@{/seller/update}" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="product_name" th:value="${productDTO.productVO.product_name}">
+                <label for="price">
+                    <div>
+                        가격 : <span th:text="${productDTO.productVO.price}"></span>
+                    </div>
+                </label>
+                <input id="price" type="text" name="price" th:value="${productDTO.productVO.price}">
+                <label for="context">
+                    <div>
+                        내용 : <span th:text="${productDTO.productVO.context}"></span>
+                    </div>
+                </label>
+                <textarea name="context" id="context" th:text="${productDTO.productVO.context}"></textarea>
+                <label for="nutrition">
+                    <div>
+                        영양정보 : <span th:text="${productDTO.productVO.nutrition}"></span>
+                    </div>
+                </label>
+                <textarea type="text" name="nutrition" id="nutrition"
+                          th:text="${productDTO.productVO.nutrition}"></textarea>
+                <label for="allergy">
+                    <div>
+                        알러지 : <span th:text="${productDTO.productVO.allergy}"></span>
+                    </div>
+                </label>
+                <textarea type="text" name="allergy" id="allergy" th:text="${productDTO.productVO.allergy}"></textarea>
+                <label for="category">
+                    <div>
+                        카테고리 : <span th:text="${productDTO.productVO.category}"></span>
+                    </div>
+                </label>
+                <input id="category" type="text" name="category" th:value="${productDTO.productVO.category}">
+                <label for="stock">
+                    <div>
+                        재고 :<span th:text="${productDTO.productVO.stock}"></span>
+                    </div>
+                </label>
+                <input type="text" id="stock" name="stock" th:value="${productDTO.productVO.stock}">
+                이미지_
+                <div th:each="image : ${productDTO.imagesVO}">
+                    <img th:src="@{'/product/image/' + ${image.image}}" height="100px"/>
+                </div>
+                <input type="file" name="images" multiple>
+                <input type="submit" value="확인">
+            </form>
+        </section>
+    </section>
+</main>
+
+
+</body>
+</html>

@@ -1,9 +1,9 @@
-#container{
+#container {
     width: 800px;
     margin: 0 auto;
     margin-top: 50px;
 }
 
-#container input{
+#container input {
     border: 1px solid black;
 }

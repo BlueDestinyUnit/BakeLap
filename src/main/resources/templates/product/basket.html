@@ -15,12 +15,15 @@
 <script sec:authorize="!authenticated">
     window.onload = () => {
         create_cookiedate();
+        document.getElementById('auth').innerText='false';
     }
+
 </script>
 <script sec:authorize="authenticated">
     window.onload = () => {
         // 여기에서 원하는 작업 수행
         get_all_basketList();
+        document.getElementById('auth').innerText='true';
     }
 </script>
 <body>
@@ -28,7 +31,6 @@
         <section>
             <header th:replace="layout/header :: header"></header>
             <aside th:replace="layout/side_bar :: side_bar"></aside>
-  
             <section class="basket">
                 <section class="cart-title">
                     <h1 class="Box-title">장바구니목록</h1>
@@ -73,6 +75,7 @@
                             <button class="cart_bigorderbtn left">쇼핑 계속하기</button>
                             <button class="cart_bigorderbtn right">주문하기</button>
                         </div>
+                        <div id="auth"></div>
                     </section>
                 </section>
             </section>

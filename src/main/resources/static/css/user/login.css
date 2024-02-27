@@ -1,29 +1,17 @@
-@font-face {
-    font-family: 'MaruBuri-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{margin:0; padding:0;}
-a{text-decoration: none; color:#772800;}
-ul,li{list-style: none;}
-input{border:none;}
-
-
 /* body영역 */
 
-.Box1{
-    margin:0 auto;
+.Box1 {
+    margin: 0 auto;
     background-color: #fdfdfd;
-    margin-top:55px;
-    width:800px;
-    height:700px;
-    box-shadow: 0 5px 18px -7px rgba(0,0,0,1);
+    margin-top: 55px;
+    width: 800px;
+    height: 700px;
+    box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
     border-radius: 30px;
 }
 
-.innerBox1{
-    padding-top:40px;
+.innerBox1 {
+    padding-top: 40px;
 }
 
 .LOGIN {
@@ -63,7 +51,8 @@ input{border:none;}
     border-radius: 50px;
     text-align: center;
 }
-.LOGIN-BOX2{
+
+.LOGIN-BOX2 {
     width: 150px;
     height: 22.5px;
     margin: 20px auto;
@@ -75,7 +64,8 @@ input{border:none;}
     text-align: center;
     display: flex;
 }
-.LOGIN-BOX2>a>img{
+
+.LOGIN-BOX2 > a > img {
     width: 500px;
     height: 60px;
     border-radius: 10px;
@@ -89,7 +79,7 @@ input{border:none;}
     color: #772800;
 }
 
-.LOGIN2 > button{
+.LOGIN2 > button {
     cursor: pointer;
     border: 0;
     background-color: transparent;
@@ -103,7 +93,7 @@ input{border:none;}
     color: #772800;
 }
 
-.ID,.PASSWORD {
+.ID, .PASSWORD {
     width: 150px;
     height: 22.5px;
     border-radius: 50px;
@@ -145,15 +135,15 @@ input{border:none;}
     color: #fcebe2;
 }
 
-input{
-    border:none;
+input {
+    border: none;
 }
 
-.LOGIN-BOX2>a>img{
+.LOGIN-BOX2 > a > img {
     width: 300px;
     height: 70px;
     border-radius: 50px;
     background-color: #fee500;
-    padding-left:110px;
-    padding-right:110px;
+    padding-left: 110px;
+    padding-right: 110px;
 }

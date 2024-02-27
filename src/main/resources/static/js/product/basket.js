@@ -21,13 +21,14 @@ function getCookie(cookieName) {
     const decodedCookie = decodeURIComponent(document.cookie);
     const cookieArray = decodedCookie.split(';');
     const basketCookieArray = cookieArray.filter(cookie => cookie.trim().indexOf(name) === 0);
-
     const basketVOArray = [];
-
     for (let i = 0; i < basketCookieArray.length; i++) {
         let cookie = basketCookieArray[i];
-        cookie = cookie.split('=')[1];
+        const cookieDivd = cookie.split('=');
+        const cookieOrginName = cookieDivd[0].trim();
+        cookie = cookieDivd[1];
         cookie = cookie.replace(/\+/g, ' '); // replace 메서드의 결과를 다시 할당
+        cookie = cookie.replace('}',`,"cookie_name":"${cookieOrginName}"}`);
         basketVOArray.push(cookie); // 가공된 쿠키 값을 배열에 추가
     }
 
@@ -42,11 +43,11 @@ const basketVOArray = basketVOJsonArray.map(jsonString => JSON.parse(jsonString)
 
 function create_cookiedate(){
     tbody.innerHTML='';
+    let no =0;
     basketVOArray.forEach(basketVO => {
         // JSON 파싱하여 JavaScript 객체로 변환
-
         // 키와 값을 추출하여 사용
-        const no = basketVO.no;
+        const cookieOrginName = basketVO.cookie_name;
         const count = basketVO.count;
         const product_name = basketVO.product_name;
         const price = basketVO.price;
@@ -57,7 +58,9 @@ function create_cookiedate(){
 
         tbody.insertAdjacentHTML('beforeend', `
             <tr class="cart_list_detail"  >
-                <td style="border:1px solid #772800; border-left:none; border-right:none;"><input class="check" type="checkbox"></td>
+                <td style="border:1px solid #772800; border-left:none; border-right:none;">
+                    <input class="check" type="checkbox" value="${cookieOrginName}">
+                </td>
                 <td style="border-right:1px solid #772800;">
                     <img src="/product/image/${image}" alt="이미지가 출력되지 않았습니다" style="width:80px; height:80px;">
                 </td>
@@ -76,8 +79,7 @@ function create_cookiedate(){
                 <td style="border:1px solid #772800; border-right:none; font-weight:bold;">무료</td>
             </tr>
         `)
-
-        console.log(`no: ${no}, count: ${count}, product_name: ${product_name}`);
+        ++no
     })
 }
 
@@ -141,6 +143,7 @@ const deleteBtn = document.querySelector('#deleteBtn');
 const csrfTokenElement = document.querySelector('#csrfToken');
 const csrfToken = csrfTokenElement.value;
 
+
 // 선택된 장바구니 확인
 function selected_product (){
     Array.from(check).forEach(checked => {
@@ -149,13 +152,28 @@ function selected_product (){
         }
     })
 }
+
+function deleteCookie(checkedValues) {
+    for (const cookieName of checkedValues) {
+        document.cookie = cookieName + '=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+    }
+}
 // 장바구니 목록 삭제
 deleteBtn.onclick = () => {
+    const auth =document.getElementById('auth').innerText;
     selected_product();
+    if(auth === 'false'){
+        deleteCookie(checkedValues);
+        location.reload();
+        return;
+    }
 
     const dataToSend = {
         key1: checkedValues
     };
+
+    console.log(dataToSend)
+
 
     fetch('/basketCancle', {
         method: 'POST',
@@ -179,9 +197,14 @@ deleteBtn.onclick = () => {
 };
 
 const orderBtn = document.querySelector('.cart_bigorderbtn.right')
-
 // 주문으로 이동
 orderBtn.onclick = () => {
+    const auth =document.getElementById('auth').innerText;
+    if(auth === 'false'){
+        alert('주문은 로그인 후 이용해주세요')
+        return;
+    }
+
     selected_product()
     const dataToSend = {
         key1: checkedValues

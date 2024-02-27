@@ -1,25 +1,17 @@
 const productSection = document.querySelector(".product")
-const searchBtn = document.querySelector('.search-btn')
-const categorylist=document.querySelectorAll(".category>li");
-searchBtn.onclick = get_sel_products;
 
-function get_sel_products(){
-    const searchTxt = document.querySelector('.search-txt').value;
-    console.log(searchTxt)
-    const filterParam = `search='${searchTxt}'`;
-    get_all_products(filterParam)
+function filterParm() {
+    const urlParamString =new URLSearchParams(window.location.search).toString();
+    if(urlParamString === ''){
+        get_all_products();
+    }else{
+        const urlParams = urlParamString.split('=');
+        const filterParam = `${urlParams[0]}=${urlParams[1]}`
+        get_all_products(filterParam);
+    }
 }
 
-
-console.log('하이')
-
-get_all_products()
-
-categorylist.forEach(categoryLi => {
-    categoryLi.onclick = () => {
-        get_all_products(`category=${categoryLi.className}`);
-    }
-} );
+filterParm();
 
 // 사용자 정보를 가져오는 함수
 function getCurrentUser() {
@@ -37,7 +29,7 @@ function get_all_products(filterParam) {
     fetch(`/product?${filterParam}`)
         .then(response => response.json())
         .then(object => {
-            console.log(object);
+            console.log(object)
             return getCurrentUser().then(userRole => {
                 create_product(object, userRole);
             });
@@ -59,7 +51,7 @@ function create_product(products, userRole) {
 
         // 사용자 역할에 따라 링크 URL 생성
         const productLink = userRole === 'SELLER' ?
-            `/product/update?product_name=${product_name}` :
+            `/seller/update?product_name=${product_name}` :
             `/product/details?product_name=${product_name}`;
 
         productSection.insertAdjacentHTML("beforeend", `

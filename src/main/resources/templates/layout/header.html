@@ -6,32 +6,34 @@
 >
 <head>
     <meta charset="UTF-8">
-    <title>hader</title>
+    <title>header</title>
     <link rel="stylesheet" href="../../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
 </head>
 <body>
 
 <header>
     <nav class="navbar">
-        <div class="navbar_logo">
+        <div class="navbar-logo">
             <a href="/"><img src="../../../static/image/logo.png" th:src="@{/image/logo.png}" alt="logo"/></a>
         </div>
-        <ul class="navbar_menu">
+        <div class="spring"></div>
+        <ul class="navbar-menu">
             <li>
                 <div class="search-box">
-                    <input type="text" class="search-txt" name="" placeholder="Type to search">
-                    <a class="search-btn" href="#">
+                    <input id="searchText" type="text" class="search-txt" name="" placeholder="Type to search">
+                    <a id="searchBtn" class="search-btn" href="#">
                         <i class="fas fa-search"></i>
                     </a>
                 </div>
             </li>
         </ul>
 
-        <ul class="navbar_icons">
+        <ul class="navbar-icons">
             <li>
-                <a sec:authorize="not authenticated" href="/user/login" class="icon1"><span><i class="fa-regular fa-user"></i></span></a>
-                <a sec:authorize="authenticated" href="/user/mypage/info" class="icon1"><span><i class="fa-regular fa-user"></i></span></a>
+                <a sec:authorize="not authenticated" href="/user/login" class="icon1 auth-false"><span><i class="fa-regular fa-user"></i></span></a>
+                <a sec:authorize="authenticated" href="/user/mypage/info" class="icon1 auth-true"><span><i class="fa-regular fa-user"></i></span></a>
             </li>
             <li>
                 <a href="/mypage/basket" class="icon2"><span><i class="fa-solid fa-bag-shopping"></i></span></a>

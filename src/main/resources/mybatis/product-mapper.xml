@@ -11,7 +11,7 @@
         <where>
             <if test="search != '' and search != null">
                 <![CDATA[
-                    L.product_name LIKE CONCAT('%',${search},'%')
+                    L.product_name LIKE CONCAT('%','${search}','%')
                 ]]>
             </if>
             <if test="category != '' and category != null">

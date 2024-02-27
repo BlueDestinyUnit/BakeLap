@@ -1,412 +1,428 @@
-@font-face {
-    font-family: 'MaruBuri-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-    *{margin:0; padding:0;}
-    a{text-decoration: none; color:#772800;}
-    ul,li{list-style: none;}
-    input{border:none;}
 
-  main{
+main {
     margin-bottom: 50px;
-  }
+}
 
-  .scrollLock { overflow: hidden; }
+.scrollLock {
+    overflow: hidden;
+}
 
-  /* body영역 */
-  .top_detail{display: flex;}
-  .top_detail > .product_img{margin-left:60px; margin-top:50px;}
-  .top_detail > .product_img > img {width:800px; height:800px;}
-  .product_detail > h1 {
+/* body영역 */
+.top_detail {
+    display: flex;
+}
+
+.top_detail > .product_img {
+    margin-left: 60px;
+    margin-top: 50px;
+}
+
+.top_detail > .product_img > img {
+    width: 800px;
+    height: 800px;
+}
+
+.product_detail > h1 {
     font-family: 'maruburi';
     color: #772800;
-    font-size:35px;
-    margin-top:125px;
-    margin-left:100px;
-  }
-  .product_detail > hr{
-    width:550px;
-    margin-left:100px;
-    margin-top:30px;
-  }
-  .product_detail > .price
-  {
-    margin-left:100px;
-    margin-top:40px;
+    font-size: 35px;
+    margin-top: 125px;
+    margin-left: 100px;
+}
+
+.product_detail > hr {
+    width: 550px;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.product_detail > .price {
+    margin-left: 100px;
+    margin-top: 40px;
     font-family: 'maruburi';
     color: #c01313;
     font-weight: bold;
-    font-size:25px;
-  }
-  .product_detail > .product_info {
-    margin-top:25px;
-    margin-left:100px;
+    font-size: 25px;
+}
+
+.product_detail > .product_info {
+    margin-top: 25px;
+    margin-left: 100px;
     font-family: 'maruburi';
-  }
-  .product_detail > .nutritional {
+}
+
+.product_detail > .nutritional {
     font-family: 'maruburi';
-    margin-top:25px;
-    margin-left:100px;
-  }
-  .product_detail > .nutritional > h3 {
+    margin-top: 25px;
+    margin-left: 100px;
+}
+
+.product_detail > .nutritional > h3 {
     font-family: 'maruburi';
     color: #772800;
-  }
+}
 
-  .product_detail > .nutritional >.info {
+.product_detail > .nutritional > .info {
     font-family: 'maruburi';
-    margin-top:12px;
-  }
+    margin-top: 12px;
+}
 
-  .product_detail > .allergy {
+.product_detail > .allergy {
     font-family: 'maruburi';
-    margin-top:25px;
-    margin-left:100px;
-  }
+    margin-top: 25px;
+    margin-left: 100px;
+}
 
-  .product_detail > .allergy > h3 {
-    font-family: 'maruburi';
-    color: #772800;
-  }
-
-  .product_detail > .allergy >.info {
-    font-family: 'maruburi';
-    margin-top:12px;
-  }
-
-  .product_detail > .stock {
-    font-family: 'maruburi';
-    margin-top:25px;
-    margin-left:100px;
-  }
-
-  .product_detail > .stock > h3 {
+.product_detail > .allergy > h3 {
     font-family: 'maruburi';
     color: #772800;
-  }
+}
 
-  .product_detail > .stock >.info {
+.product_detail > .allergy > .info {
     font-family: 'maruburi';
-    margin-top:12px;
-  }
+    margin-top: 12px;
+}
 
-  .product_detail > .num {
+.product_detail > .stock {
     font-family: 'maruburi';
-    margin-top:25px;
-    margin-left:100px;
-  }
+    margin-top: 25px;
+    margin-left: 100px;
+}
 
-  .product_detail > .num > h3{
+.product_detail > .stock > h3 {
     font-family: 'maruburi';
     color: #772800;
-  }
+}
 
-  .detail_btn {
-    margin-top:40px;
+.product_detail > .stock > .info {
     font-family: 'maruburi';
-    margin-left:100px;
+    margin-top: 12px;
+}
+
+.product_detail > .num {
+    font-family: 'maruburi';
+    margin-top: 25px;
+    margin-left: 100px;
+}
+
+.product_detail > .num > h3 {
+    font-family: 'maruburi';
+    color: #772800;
+}
+
+.detail_btn {
+    margin-top: 40px;
+    font-family: 'maruburi';
+    margin-left: 100px;
     display: flex;
-  }
+}
+
 .detail_btn > div {
-  display: flex;
-  flex-direction: row; /* 요소들을 가로로 나열 */
+    display: flex;
+    flex-direction: row; /* 요소들을 가로로 나열 */
 
 }
-  .detail_btn > div .buy {
-    border:none;
+
+.detail_btn > div .buy {
+    border: none;
     background-color: #772800;
-    margin-right:10px;
-    padding:15px;
+    margin-right: 10px;
+    padding: 15px;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 }
-.detail_btn > div .buy >p {
+
+.detail_btn > div .buy > p {
     font-family: 'maruburi';
     color: #fcebe2;
 }
 
 .detail_btn > div .basket {
-    border:none;
+    border: none;
     background-color: #772800;
-    margin-left:10px;
-    padding:15px;
+    margin-left: 10px;
+    padding: 15px;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     -ms-border-radius: 25px;
     -o-border-radius: 25px;
 }
+
 .detail_btn > div .basket > p {
     font-family: 'maruburi';
     color: #fcebe2;
 }
 
 .detail_btn > div .review {
-  border:none;
-  background-color: #772800;
-  margin-left:20px;
-  padding:15px;
-  border-radius: 25px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  -ms-border-radius: 25px;
-  -o-border-radius: 25px;
+    border: none;
+    background-color: #772800;
+    margin-left: 20px;
+    padding: 15px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
 }
+
 .detail_btn > div .review > p {
-  font-family: 'maruburi';
-  color: #fcebe2;
+    font-family: 'maruburi';
+    color: #fcebe2;
 }
 
 /* 리뷰 write  */
 
-.create{
-  display: none;
-  position: absolute;
+.create {
+    display: none;
+    position: absolute;
 }
 
-.review_write{
-  width: 800px;
-  margin: 0 auto;
-  margin-bottom: 65px;
+.review_write {
+    width: 800px;
+    margin: 0 auto;
+    margin-bottom: 65px;
 }
 
-.review_write > .hidden{
-  display: none;
+.review_write > .hidden {
+    display: none;
 }
 
-.textarea_header{
- padding: 5px 0;
+.textarea_header {
+    padding: 5px 0;
 }
 
-.textarea_header > span{
-  margin-left: 8px;
-  margin-right: 5px;
+.textarea_header > span {
+    margin-left: 8px;
+    margin-right: 5px;
 }
 
-.textarea_header > label{
-  margin-right: 5px;
+.textarea_header > label {
+    margin-right: 5px;
 }
 
-.textarea{
-  width: 800px;
-  height: 110px;
-  border: 1px solid #707070;
-  border-bottom: none;
+.textarea {
+    width: 800px;
+    height: 110px;
+    border: 1px solid #707070;
+    border-bottom: none;
 }
-textarea{
-  width: 780px;
-  height: 95px;
-  margin-top: 8px;
-  margin-left: 10px;
-  outline: 0;
-  resize: none;
-  border: none;
-  font-size: large;
-  font-family: 'maruburi';
+
+textarea {
+    width: 780px;
+    height: 95px;
+    margin-top: 8px;
+    margin-left: 10px;
+    outline: 0;
+    resize: none;
+    border: none;
+    font-size: large;
+    font-family: 'maruburi';
 }
-.textarea_footer{
-  width: 790px;
-  height: 42px;
-  position: absolute;
-  padding-left: 10px;
-  border: 1px solid #707070;
+
+.textarea_footer {
+    width: 790px;
+    height: 42px;
+    position: absolute;
+    padding-left: 10px;
+    border: 1px solid #707070;
 }
-.textarea_footer > span{
-display: inline-block;
-  margin: 8px 5px;
-  color: #212B36;
+
+.textarea_footer > span {
+    display: inline-block;
+    margin: 8px 5px;
+    color: #212B36;
 }
-.textarea_footer > button{
-  position: absolute;
-  right: 0;
-  width: 70px;
-  padding:12px;
-  border:none;
-  background-color: #c01313;
+
+.textarea_footer > button {
+    position: absolute;
+    right: 0;
+    width: 70px;
+    padding: 12px;
+    border: none;
+    background-color: #c01313;
 }
+
 .textarea_footer > .review_save > p {
-  font-family: 'maruburi';
-  color: #fcebe2;
+    font-family: 'maruburi';
+    color: #fcebe2;
 }
 
 /* 리뷰 header */
-.review_header{
-  width: 1000px;
-  margin-left: 350px;
+.review_header {
+    width: 1000px;
+    margin-left: 350px;
 }
 
-.review_header > h1{
-  color: #772800;
-  font-size: xx-large;
-  display: inline-block;
-  margin-bottom: 10px;
+.review_header > h1 {
+    color: #772800;
+    font-size: xx-large;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-.review_header > .counts{
-  display: inline-block;
-  margin-left: 5px;
-  font-size: x-large;
-  font-weight: bold;
-  color: #772800;
+.review_header > .counts {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: x-large;
+    font-weight: bold;
+    color: #772800;
 }
 
-.review_header > .review_icon{
-  margin-left: 610px;
-  font-size: x-large;
-  color: #c01313;
+.review_header > .review_icon {
+    margin-left: 610px;
+    font-size: x-large;
+    color: #c01313;
 }
 
 .review_header > .all_avg {
-  margin-right: 6px;
-  color: #212B36;
+    margin-right: 6px;
+    color: #212B36;
 }
 
-.review_header > .avg{
-  font-size: x-large;
-  font-weight: bold;
+.review_header > .avg {
+    font-size: x-large;
+    font-weight: bold;
 }
 
 /* 리뷰 view(context)  */
-.review_context{
-  width: 1000px;
-  margin-left: 350px;
+.review_context {
+    width: 1000px;
+    margin-left: 350px;
 }
 
-.review_context_item{
-  padding: 30px 0;
-  border-bottom: 1px solid #707070;
+.review_context_item {
+    padding: 30px 0;
+    border-bottom: 1px solid #707070;
 }
 
-.review_context_item > .item_set{
-  font-weight: bold;
-  margin-bottom: 8px;
+.review_context_item > .item_set {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
-.review_context_item > .item_set > .name{
-  margin-right: 10px;
+.review_context_item > .item_set > .name {
+    margin-right: 10px;
 }
 
-.update_btn{
-  margin-left: 780px;
- margin-right: 10px;
+.update_btn {
+    margin-left: 780px;
+    margin-right: 10px;
 }
 
-.update_btn, .delete_btn{
-  color: #212B36;
-  border: none;
-  outline: none;
-  background-color: inherit ;
-  cursor: pointer;
+.update_btn, .delete_btn {
+    color: #212B36;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    cursor: pointer;
 }
 
-.review_context_item > div{
-  font-size: large;
-  margin-bottom: 6px;
+.review_context_item > div {
+    font-size: large;
+    margin-bottom: 6px;
 }
 
 
-.review_context_item > .item_date{
-  color: #707070;
+.review_context_item > .item_date {
+    color: #707070;
 }
 
 /* 리뷰 수정 창 view(context) */
-.review_context_modal{
-  z-index: 999;
-  width: 850px;
-  height: 350px;
-  position: fixed;;
-  bottom: 500px;
-  left: 550px;
-  border: 1px solid #707070;
-  background-color: white;
+.review_context_modal {
+    z-index: 999;
+    width: 850px;
+    height: 350px;
+    position: fixed;;
+    bottom: 500px;
+    left: 550px;
+    border: 1px solid #707070;
+    background-color: white;
 }
 
-.review_context_modal > form{
-  margin-left: 20px;
+.review_context_modal > form {
+    margin-left: 20px;
 }
 
-.update{
-  display: none;
+.update {
+    display: none;
 }
 
-.modal{
-  width: 850px;
-  height: 40px;
+.modal {
+    width: 850px;
+    height: 40px;
 }
 
-.modal_name{
-  text-align: center;
-  height: 60px;
+.modal_name {
+    text-align: center;
+    height: 60px;
 }
 
-.update_delete_btn{
-  margin-left: 810px;
-  margin-top: 15px;
-  border:none; box-shadow:none;
-  border-radius:0;
-  padding:0;
-  cursor:pointer;
-  background: inherit;
+.update_delete_btn {
+    margin-left: 810px;
+    margin-top: 15px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: pointer;
+    background: inherit;
 }
 
-.modal_name > span{
-  font-weight: bold;
-  font-size: x-large;
-  color: #212B36;
+.modal_name > span {
+    font-weight: bold;
+    font-size: x-large;
+    color: #212B36;
 }
-
-
-
 
 
 /* Style the list */
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
-    margin-left:100px;
-    margin-top:100px;
+    margin-left: 100px;
+    margin-top: 100px;
     position: absolute;
-  }
-  
-  /* Display list items side by side */
-  ul.breadcrumb li {
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
     display: inline;
     font-family: 'maruburi';
     font-size: 18px;
-  }
-  
-  /* Add a slash symbol (/) before/behind each list item */
-  ul.breadcrumb li+li:before {
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li + li:before {
     padding: 8px;
     color: black;
     font-family: 'maruburi';
     content: "/\00a0";
-  }
-  
-  /* Add a color to all links inside the list */
-  ul.breadcrumb li a {
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
     color: #772800;
     font-family: 'maruburi';
     text-decoration: none;
-  }
+}
 
 .product_detail > .num {
-  font-family: 'maruburi';
-  margin-top:25px;
-  margin-left:100px;
+    font-family: 'maruburi';
+    margin-top: 25px;
+    margin-left: 100px;
 }
 
-.product_detail > .num > h3{
-  font-family: 'maruburi';
-  margin-bottom: 12px;
-  color: #772800;
+.product_detail > .num > h3 {
+    font-family: 'maruburi';
+    margin-bottom: 12px;
+    color: #772800;
 }
-.num>input{
-  width: 30px;
-  height: 30px;
+
+.num > input {
+    width: 30px;
+    height: 30px;
 }

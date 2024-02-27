@@ -1,5 +1,6 @@
 const reviewBtn = document.querySelector(".review");
 
+
 // 버튼 클릭 시, 리뷰 작성 메뉴 열고 닫기
 reviewBtn.addEventListener('click', () => {
     const sectionWrite = document.querySelector(".review_write");

@@ -31,7 +31,7 @@
     </update>
 
     <select id="find_stock" parameterType="StockVO" resultMap="stock">
-        SELECT * FROM sell_stock
+        SELECT * FROM `sell_stock`
     </select>
 
     <resultMap id="stock" type="StockVO">

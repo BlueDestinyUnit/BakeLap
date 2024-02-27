@@ -1,13 +1,3 @@
-@font-face {
-    font-family: 'MaruBuri-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/MaruBuri-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-*{margin:0; padding:0;}
-a{text-decoration: none; color:#772800;}
-ul,li{list-style: none;}
-
 .side-bar > ul ul {
     display: none;
 }
@@ -23,6 +13,7 @@ ul,li{list-style: none;}
     width: var(--side-bar-width);
     min-height: var(--side-bar-height);
     margin-top: calc((100vh - var(--side-bar-height)) / 2);
+    z-index: 1;
 }
 
 .side-bar__icon-box {
@@ -61,30 +52,29 @@ ul,li{list-style: none;}
 
 .side-bar__icon-1 > div:nth-of-type(2) {
     top: 40%;
-    transform-origin:bottom left;
+    transform-origin: bottom left;
 }
 
 .side-bar__icon-1 > div:nth-of-type(3) {
     top: 80%;
     left: auto;
     right: 0;
-    transform-origin:bottom right;
+    transform-origin: bottom right;
 }
-
 
 .side-bar:hover .side-bar__icon-1 {
     transform: translate(-198px, 0);
 }
 
 .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
-    transform:rotate(45deg);
+    transform: rotate(45deg);
     width: 70.5%;
     height: 25%;
 }
 
 .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
     top: 40%;
-    transform:rotate(-45deg);
+    transform: rotate(-45deg);
     width: 70.5%;
     height: 25%;
 }
@@ -99,7 +89,7 @@ ul,li{list-style: none;}
 .side-bar ul > li > a {
     display: block;
     color: #fcebe2;
-    font-family: 'MaruBuri';
+    font-family: inherit;
     font-size: 1.4rem;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -133,3 +123,4 @@ ul,li{list-style: none;}
 .side-bar:hover {
     transform: translate(-20px, 0);
 }
+
