@@ -1,4 +1,4 @@
-## [BakeLab 빵 쇼핑몰 바로가기](http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080)
+## 링크 -> [http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080](http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080)
 
 ## 스토리
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0002.jpg)
