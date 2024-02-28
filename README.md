@@ -1,4 +1,4 @@
-## [BakeLab 빵 쇼핑몰 바로가기](http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080)
+## 링크 -> [http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080](http://ec2-3-39-22-132.ap-northeast-2.compute.amazonaws.com:8080)
 
 ## 스토리
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0002.jpg)
@@ -53,6 +53,8 @@
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0008.jpg)
 ## 로그인 및 회원가입
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0009.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0020.jpg)
+
 ## 유저 MyPage
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0010.jpg)
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0011.jpg)
@@ -65,12 +67,23 @@
 ## 결제
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0016.jpg)
 ## 상품 등록 및 수정
-![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0017.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0020.jpg)
+![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0021.jpg)
 ## 상품 통계
 ![이미지](https://github.com/BlueDestinyUnit/BlueDestinyUnit/blob/main/BakeLab/0018.jpg)
 
-### 개선해야할 점
-- 판매자 계정에 대한 UI 보완이 필요합니다.
-- 검색 기능에 일부 버그가 존재합니다.
-- 회원은 장바구니 기능을 정상적으로 사용할 수 있지만, 비회원은 아직 장바구니 기능에 버그가 있습니다.
-- 메뉴바 UI를 개선해야 합니다.
+### 23.10.6 마감 당시 개선해야할 점
+- 판매자 계정에 대한 UI 보완이 필요
+- 검색 기능에 일부 버그
+- 회원은 장바구니 기능을 정상적으로 사용할 수 있지만, 비회원은 아직 장바구니 기능에 버그가 있음
+- 메뉴바 UI를 개선해야함.
+
+### 현재 개선된 점
+- 판매자 계정에 대한 UI 보완
+- 어떤 페이지에서도 검색 가능하도록 조치
+- 비회원 장바구니 사용 가능하도록 조치 (단 바로 로그인시 비로그인과 다르므로 내역은 저장되지 않음)
+- 일관적이지 못했던 메뉴바 개선
+  
+### 특이 사항
+- 회원가입시 휴대폰 인증 api는 유료 서비스 임으로 브라우저 상에서 인증번호가 나오도록 하였습니다.
+- 카카오 결제는 테스트임으로 실제 결제가 이루어지지는 않습니다.
