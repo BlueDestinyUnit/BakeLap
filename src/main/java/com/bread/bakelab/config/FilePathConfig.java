@@ -33,8 +33,8 @@ public class FilePathConfig {
             properties.setSavePath(LOCAL_SAVE_PATH);
             log.info(properties);
         } else {
-            properties.setImageFilePath(SAVE_PATH);
-            properties.setSavePath(IMAGE_FILE_PATH);
+            properties.setImageFilePath(IMAGE_FILE_PATH);
+            properties.setSavePath(SAVE_PATH);
         }
         return properties;
     }

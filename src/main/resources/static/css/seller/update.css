@@ -13,6 +13,7 @@
     padding-bottom: 2px;
     border-bottom: 2px solid black;
     margin-bottom: 5px;
+    font-size: 30px;
 }
 
 .update-container > form {
@@ -20,6 +21,11 @@
     flex-direction: column;
     gap: 10px;
 }
+
+.update-container > form > label {
+    color: #772800
+}
+
 
 .update-container > form > input[type=text] {
     font-family: inherit;

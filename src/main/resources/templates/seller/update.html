@@ -23,7 +23,7 @@
         <header th:replace="layout/header :: header"></header>
         <aside th:replace="layout/side_bar :: side_bar"></aside>
         <section class="update-container">
-            <h1><span th:text="${productDTO.productVO.product_name}"></span></h1>
+            <h1 th:text="${productDTO.productVO.product_name}"></h1>
             <form th:action="@{/seller/update}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="product_name" th:value="${productDTO.productVO.product_name}">
                 <label for="price">
@@ -59,7 +59,7 @@
                 <input id="category" type="text" name="category" th:value="${productDTO.productVO.category}">
                 <label for="stock">
                     <div>
-                        재고 :<span th:text="${productDTO.productVO.stock}"></span>
+                        재고 : <span th:text="${productDTO.productVO.stock}"></span>
                     </div>
                 </label>
                 <input type="text" id="stock" name="stock" th:value="${productDTO.productVO.stock}">

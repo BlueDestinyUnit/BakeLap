@@ -196,7 +196,7 @@ public class UserController {
 
     /******************* 휴대폰 인증 ***********************/
 
-    // 인증번호 요청 시 인증번호를 생성 -> 휴대폰 인증은 유료서비스인 관계로 JSON으로 다시 인증키를 보낼것임
+    // 인증번호 요청 시 인증번호를 생성
 //    @ResponseBody
 //    @GetMapping("/sms/key")
 //    public boolean get_verifyKey(
@@ -221,7 +221,7 @@ public class UserController {
 //        session.setAttribute("VERIFY_KEY", VERIFY_KEY);
 //        return true;
 //    }
-
+// 인증번호 요청 시 인증번호를 생성 -> 휴대폰 인증은 유료서비스인 관계로 JSON으로 다시 인증키를 보낼것임
     @ResponseBody
     @GetMapping("/sms/key")
     public String get_verifyKey(

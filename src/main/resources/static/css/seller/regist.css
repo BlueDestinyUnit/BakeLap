@@ -15,6 +15,10 @@
     gap: 10px;
 }
 
+.regist-container > form > label {
+    color: #772800
+}
+
 .regist-container > form > input[type=text] {
     font-family: inherit;
     font-size: inherit;
