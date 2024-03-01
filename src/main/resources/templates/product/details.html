@@ -16,8 +16,10 @@
     <script src="../../static/js/product/details_review.js" th:src="@{/js/product/details_review.js}" defer></script>
     <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
     <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <script src="../../static/js/layout/footer.js" th:src="@{/js/layout/footer.js}" defer></script>
     <div th:if="${#authorization.expression('isAuthenticated()')}">
         <script src="../../static/js/product/details_review_writeBtn.js" th:src="@{/js/product/details_review_writeBtn.js}" defer></script>
+
     </div>
 
 </head>

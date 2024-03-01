@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             searchBtn.classList.toggle('ready');
         })
+
     }else{
         searchBtn.onclick = get_sel_products;
     }

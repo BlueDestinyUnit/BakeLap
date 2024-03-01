@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // 모바일 화면 크기에서만 실행되도록 체크
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        const basket = document.querySelector('.basket');
+        const cart = document.querySelector('.cart');
+        basket.style.marginLeft = '50px';
+        cart.style.width='150%';
+    }
+});
+
 const tbody = document.querySelector('tbody');
 let data; // 전역 변수로 data 선언
 function orderList() {
@@ -59,7 +69,6 @@ function getOrderList() {
         })
         .then(responseData => {
             data = responseData; // 전역 변수에 데이터 저장
-            console.log('안녕');
             // 데이터를 사용하는 로직을 여기에 작성
             console.log(data); // 응답 데이터를 콘솔에 출력하거나 다른 작업을 수행할 수 있습니다.
             const totalPage = data.totalPage;

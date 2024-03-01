@@ -61,7 +61,6 @@ public class ProductService {
 
     // 각 상품 이미지를 다운로드 해주는 서비스
     public ResponseEntity<Resource> get_product_image_file(String fileName) throws Exception{
-        System.out.println("안녕"+IMAGE_FILE_PATH);
         Resource resource = new FileSystemResource(IMAGE_FILE_PATH + fileName);
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Content-Type", Files.probeContentType(resource.getFile().toPath()));

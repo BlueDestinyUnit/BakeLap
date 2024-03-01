@@ -1,3 +1,13 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // 모바일 화면 크기에서만 실행되도록 체크
+    if (window.matchMedia("(max-width: 768px)").matches) {
+        const basket = document.querySelector('.basket');
+        const cart = document.querySelector('.cart');
+        basket.style.marginLeft = '50px';
+        cart.style.width='150%';
+    }
+});
+
 // basketVO 쿠키 읽어오기
 
 const tbody = document.querySelector('tbody');

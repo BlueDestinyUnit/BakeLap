@@ -4,7 +4,7 @@
       xmlns:th="http://www.thymeleaf.org/"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>장바구니</title>
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../static/css/product/basket.css" th:href="@{/css/product/basket.css}" }>
@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
     <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <script src="../../static/js/product/basket.js" th:src="@{/js/product/basket.js}" defer></script>
+    <script src="../../static/js/layout/footer.js" th:src="@{/js/layout/footer.js}" defer></script>
+    <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
+
 </head>
 <script sec:authorize="!authenticated">
     window.onload = () => {

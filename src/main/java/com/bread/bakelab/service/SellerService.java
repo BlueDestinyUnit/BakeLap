@@ -78,13 +78,6 @@ public class SellerService {
                 .withCategory(productRegisVO.getCategory())
                 .withStock(productRegisVO.getStock())
                 .build();
-//        productVO.setProduct_name(productRegisVO.getProduct_name());
-//        productVO.setCategory(productRegisVO.getCategory());
-//        productVO.setPrice(productRegisVO.getPrice());
-//        productVO.setAllergy(productRegisVO.getAllergy());
-//        productVO.setNutrition(productRegisVO.getNutrition());
-//        productVO.setContext(productRegisVO.getContext());
-//        productVO.setStock(productRegisVO.getStock());
         productService.update_product(productVO);
         if(productRegisVO.getImages().get(0).isEmpty() == false){
             String product_name = productVO.getProduct_name();

@@ -1,5 +1,5 @@
 /* body영역 */
-.story {
+main > section > .story {
     justify-content: center;
     margin-top: 44px;
     text-align: center;
