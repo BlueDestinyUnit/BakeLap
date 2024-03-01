@@ -32,7 +32,7 @@ public interface PurchaseMapper {
     // 결제 목록
     List<OrderDTO> find_my_list(String userID);
     // 결제한 총금액
-    int totalPayment(String userID);
+    Integer totalPayment(String userID);
 
 
 }

@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find_pwd</title>
+    <title>비밀번호 찾기</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../../static/css/user/find/find_pwd.css" th:href="@{/css/user/find/find_pwd.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="../../../static/js/user/verified_tel.js" th:src="@{/js/user/verified_tel.js}" defer></script>
@@ -18,46 +19,50 @@
 
 </head>
 <body>
-    <main>
-        <section>
-            <header th:replace="layout/header :: header"></header>
-            <aside th:replace="layout/side_bar :: side_bar"></aside>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
 
-          <section class="Box1">
+        <section class="Box1">
             <section class="innerBox1">
-            <h1 class="Find_id">Find_pwd</h1>
-            <form name="join_form" th:action="@{/user/find/pwdAccount}" method="post" id="jaoin_form" onsubmit="return form_check()" >
-                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-                <p>
-                <label for="u_id">아이디</label>
-                  <input type="text" name="id" id="u_id">
-                  <input type="hidden" id="id_verified" value="none">
-                  <button type="button" name="check_id">아이디 확인</button>
-                  <br>
-                <span class="err_id">* 4~12글자까지만 입력 가능합니다.</span>
-              </p>
-                <p>
-                    <label for="mobile">전화번호</label>
-                    <input type="text" name="tel" id="mobile">
-                    <button type="button" id="verify_code_get_btn">인증번호 요청</button>
+                <h1 class="Find_id">Find_pwd</h1>
+                <form name="join_form" th:action="@{/user/find/pwdAccount}" method="post" id="jaoin_form"
+                      onsubmit="return form_check()">
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                    <p>
+                        <label for="u_id">아이디</label>
+                        <input type="text" name="id" id="u_id">
+                        <input type="hidden" id="id_verified" value="none">
+                        <button type="button" name="check_id">아이디 확인</button>
+                        <br>
+                        <span class="err_id">* 4~12글자까지만 입력 가능합니다.</span>
+                    </p>
+                    <p>
+                        <label for="mobile">전화번호</label>
+                        <input type="text" name="tel" id="mobile">
+                        <button type="button" id="verify_code_get_btn">인증번호 요청</button>
 
-                    <br>
-                    <span class="err_mobile">* '-'없이 숫자만 입력</span>
-                </p>
-                <p>
-                    <label for="mobile">인증번호</label>
-                    <input type="text" id="verify_code_input" >
-                    <button type="button" id="verify_code_confirm_btn">인증번호 확인</button>
-                    <input type="hidden" id="phone_verified">
-                </p>
-                  <p class="final_btn">
-                    <a href="#"><button type="submit" class="btn">NEXT</button></a>
-                  </p>
+                        <br>
+                        <span class="err_mobile">* '-'없이 숫자만 입력</span>
+                    </p>
+                    <p>
+                        <label for="mobile">인증번호</label>
+                        <input type="text" id="verify_code_input">
+                        <button type="button" id="verify_code_confirm_btn">인증번호 확인</button>
+                        <input type="hidden" id="phone_verified">
+                    </p>
+                    <p class="final_btn">
+                        <a href="#">
+                            <button type="submit" class="btn">NEXT</button>
+                        </a>
+                    </p>
                 </form>
             </section>
-          </section>
-          </section>
-          </main>
-    
+        </section>
+        <footer th:replace="layout/footer :: footer"></footer>
+    </section>
+</main>
+
 </body>
 </html>

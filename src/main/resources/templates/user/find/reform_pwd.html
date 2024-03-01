@@ -6,50 +6,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reform_pwd</title>
+    <title>비밀번호 변경</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
-    <link rel="stylesheet" href="../../../static/css/user/find/reform_pwd.css" th:href="@{/css/user/find/reform_pwd.css}" >
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
+    <link rel="stylesheet" href="../../../static/css/user/find/reform_pwd.css" th:href="@{/css/user/find/reform_pwd.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="../../../static/js/user/find/find.js" th:src="@{/js/user/find/find.js}" defer></script>
     <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
     <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
 </head>
 <body>
-    <main>
-        <section>
-          <header th:replace="layout/header :: header"></header>
-          <aside th:replace="layout/side_bar :: side_bar"></aside>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
 
-          <section class="Box1">
+        <section class="Box1">
             <section class="inner_box">
-              <h1 class="Reform_pwd">Reform_pwd</h1>
-            <section class="join">
-               
-              <form name="join_form" th:action="@{/user/find/pwdReform}" method="post" id="jaoin_form" onsubmit="return form_check()">
-               <input type="hidden" name="id" th:value="${userId}">
-                <p>
-                  <label for="pwd">수정할 비밀번호</label>
-                  <input type="text" th:name="pw" id="pwd">
-                  <br>
-                  <span class="err_pwd">* 4~12글자까지만 입력 가능합니다.</span>
-                </p>
-                <p>
-                  <label for="repwd">비밀번호 확인</label>
-                  <input type="text" name="repwd" id="repwd">
-                  <br>
-                  <span class="err_repwd">* 4~12글자까지만 입력 가능합니다.</span>
-                </p>
-                <p class="final_btn">
-                  <a href="#"><button type="submit" class="btn">비밀번호 저장하기</button></a>
-                </p>
-                </form>
-                </section>
-              </section>
-            </section>
+                <h1 class="Reform_pwd">Reform_pwd</h1>
+                <section class="join">
 
-          </section>
-          </main>
-    
+                    <form name="join_form" th:action="@{/user/find/pwdReform}" method="post" id="jaoin_form"
+                          onsubmit="return form_check()">
+                        <input type="hidden" name="id" th:value="${userId}">
+                        <p>
+                            <label for="pwd">수정할 비밀번호</label>
+                            <input type="text" th:name="pw" id="pwd">
+                            <br>
+                            <span class="err_pwd">* 4~12글자까지만 입력 가능합니다.</span>
+                        </p>
+                        <p>
+                            <label for="repwd">비밀번호 확인</label>
+                            <input type="text" name="repwd" id="repwd">
+                            <br>
+                            <span class="err_repwd">* 4~12글자까지만 입력 가능합니다.</span>
+                        </p>
+                        <p class="final_btn">
+                            <a href="#">
+                                <button type="submit" class="btn">비밀번호 저장하기</button>
+                            </a>
+                        </p>
+                    </form>
+                </section>
+            </section>
+        </section>
+        <footer th:replace="layout/footer :: footer"></footer>
+    </section>
+</main>
+
 </body>
 </html>

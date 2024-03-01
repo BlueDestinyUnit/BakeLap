@@ -1,40 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="ko"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org/"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find_pwd</title>
-  <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
-  <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
-  <link rel="stylesheet" href="../../../static/css/user/find/find_pwd_account.css" th:href="@{/css/user/find/find_pwd_account.css}">
-  <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
-  <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
-  <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원 탈퇴</title>
+    <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
+    <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
+    <link rel="stylesheet" href="../../../static/css/user/find/find_pwd_account.css"
+          th:href="@{/css/user/find/find_pwd_account.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
+    <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
 </head>
 <body>
 <main>
-  <section>
-    <header th:replace="layout/header :: header"></header>
-    <aside th:replace="layout/side_bar :: side_bar"></aside>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
 
-    <section class="Box1">
-      <section class="innerBox1">
-        <h1 class="Find_pwd">Delete Account</h1>
-        <section class="Find_id_com">
-          <h1></h1><p>회원탈퇴 완료되었습니다</p>
+        <section class="Box1">
+            <section class="innerBox1">
+                <h1 class="Find_pwd">Delete Account</h1>
+                <section class="Find_id_com">
+                    <h1></h1>
+                    <p>회원탈퇴 완료되었습니다</p>
+                </section>
+                <form id="jaoin_form">
+                    <p class="final_btn">
+                        <a href="/">
+                            <button type="button" class="btn">BackLab 둘러보기</button>
+                        </a>
+                    </p>
+                </form>
+            </section>
         </section>
-        <form  id="jaoin_form">
-          <p class="final_btn">
-            <a href="/"><button type="button" class="btn">BackLab 둘러보기</button></a>
-          </p>
-        </form>
-      </section>
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
-  </section>
 </main>
 </body>
 </html>

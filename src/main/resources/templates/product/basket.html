@@ -5,11 +5,12 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>장바구니</title>
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../../static/css/product/basket.css" th:href="@{/css/product/basket.css}" }>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <script src="../../static/js/product/basket.js" th:src="@{/js/product/basket.js}" defer></script>
 </head>
 <script sec:authorize="!authenticated">
@@ -79,6 +80,7 @@
                     </section>
                 </section>
             </section>
+            <footer th:replace="layout/footer :: footer"></footer>
         </section>
     </main>
 </body>

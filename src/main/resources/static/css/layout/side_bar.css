@@ -4,7 +4,7 @@
 
 :root {
     --side-bar-width: 270px;
-    --side-bar-height: 90vh;
+    --side-bar-height: 68vh;
 }
 
 .side-bar {
@@ -211,7 +211,5 @@
     .side-bar.expanded > ul > .menu > ul {
         display: none;
     }
-
-
 }
 

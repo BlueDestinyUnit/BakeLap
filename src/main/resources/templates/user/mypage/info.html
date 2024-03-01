@@ -7,9 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mypage</title>
+    <title>회원 정보</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../../static/css/user/mypage/info.css" th:href="@{/css/user/mypage/info.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="../../../static/js/user/mypage/infoFormat.js" th:src="@{/js/user/mypage/infoFormat.js}" defer></script>
@@ -61,6 +62,7 @@
                 </section>
             </section>
         </section>
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
 </main>
 </body>

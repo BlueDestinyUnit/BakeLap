@@ -35,6 +35,6 @@ function nutritional(){
     for(let i=0;i<arr.length;i++){
         info.insertAdjacentHTML("beforeend",`<div>${arr[i]}</div>`);
     }
-
 }
+
 nutritional();

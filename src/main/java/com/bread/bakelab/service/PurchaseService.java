@@ -55,7 +55,7 @@ public class PurchaseService {
         return purchaseMapper.find_my_list(userID);
     }
 
-    public int totalPayment(String userID){
+    public Integer totalPayment(String userID){
         return purchaseMapper.totalPayment(userID);
     }
 

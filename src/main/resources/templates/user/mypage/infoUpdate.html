@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="ko"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org/"
@@ -8,9 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mypage</title>
+    <title>회원정보 변경</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../../static/css/user/mypage/infoUpdate.css" th:href="@{/css/user/mypage/infoUpdate.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
@@ -23,71 +23,74 @@
 
 </head>
 <body>
-    <main>
-        <section>
-            <header th:replace="layout/header :: header"></header>
-            <aside th:replace="layout/side_bar :: side_bar"></aside>
-            <section class="Box1">
-              <section class="innerBox1">
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
+        <section class="Box1">
+            <section class="innerBox1">
                 <h1 class="MyPage">My Page</h1>
                 <section class="join">
-               
-                <form name="join_form" action="/user/mypage/infoUpdate" method="post" id="join_form">
-                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-                    <p>
-                       <label>이름</label> <span>|</span>
-                       <label th:text="${#authentication.principal.userVO.name}">홍길동</label>
-                       <br>
-                     </p>
-                     <p>
-                       <label>아이디</label> <span>|</span>
-                       <label th:text="${#authentication.principal.userVO.id}">Gildong2</label>
-                       <br>
-                     </p>
-                    <p>
-                        <label for="postalCode">우편번호</label>
-                        <input type="text" th:name="address" id="postalCode" placeholder="우편번호" readonly>
-                        <button type="button" onclick="sample4_execDaumPostcode()">주소검색</button>
-                    </p>
-                    <p>
-                        <label for="addr1">주소</label>
-                        <input type="text" th:name="address" id="addr1" placeholder="기본주소" readonly>
-                        <label for="addr2"></label>
-                        <input type="text" th:name="address" id="addr2" placeholder="상세주소">
-                        <br>
-                        <span class="err_address"></span>
-                    </p>
-                    <p>
-                        <label for="email_id">이메일</label>
-                        <input type="hidden" name="email" value="">
-                        <input type="text" name="email_id" id="email_id"> @
-                        <input type="text" name="email_dns" id="email_dns">
-                        <br>
-                        <span class="err_email"></span>
-                    </p>
-                    <p>
-                        <label for="mobile">전화번호</label>
-                        <input type="text" id="mobile" name="tel">
-                        <button type="button" id="verify_code_get_btn">인증번호 요청</button>
-                        <br>
-                        <span class="err_mobile">* '-'없이 숫자만 입력</span>
-                    </p>
-                    <p>
-                        <label for="mobile">인증번호</label>
-                        <input type="text" name="mobile" id="verify_code_input" >
-                        <button type="button" id="verify_code_confirm_btn">인증번호 확인</button>
-                        <input type="hidden" name="phone_verified" id="phone_verified">
-                    </p>
 
-                     <p class="final_btn">
-                       <button type="button" name="submitBtn" class="btn">저장하기</button>
-                       <a href="/user/mypage/info"><button type="button" class="btn">이전으로</button></a>
-                     </p>
-                 </form>
-               </section>
+                    <form name="join_form" action="/user/mypage/infoUpdate" method="post" id="join_form">
+                        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+                        <p>
+                            <label>이름</label> <span>|</span>
+                            <label th:text="${#authentication.principal.userVO.name}">홍길동</label>
+                            <br>
+                        </p>
+                        <p>
+                            <label>아이디</label> <span>|</span>
+                            <label th:text="${#authentication.principal.userVO.id}">Gildong2</label>
+                            <br>
+                        </p>
+                        <p>
+                            <label for="postalCode">우편번호</label>
+                            <input type="text" th:name="address" id="postalCode" placeholder="우편번호" readonly>
+                            <button type="button" onclick="sample4_execDaumPostcode()">주소검색</button>
+                        </p>
+                        <p>
+                            <label for="addr1">주소</label>
+                            <input type="text" th:name="address" id="addr1" placeholder="기본주소" readonly>
+                            <label for="addr2"></label>
+                            <input type="text" th:name="address" id="addr2" placeholder="상세주소">
+                            <br>
+                            <span class="err_address"></span>
+                        </p>
+                        <p>
+                            <label for="email_id">이메일</label>
+                            <input type="hidden" name="email" value="">
+                            <input type="text" name="email_id" id="email_id"> @
+                            <input type="text" name="email_dns" id="email_dns">
+                            <br>
+                            <span class="err_email"></span>
+                        </p>
+                        <p>
+                            <label for="mobile">전화번호</label>
+                            <input type="text" id="mobile" name="tel">
+                            <button type="button" id="verify_code_get_btn">인증번호 요청</button>
+                            <br>
+                            <span class="err_mobile">* '-'없이 숫자만 입력</span>
+                        </p>
+                        <p>
+                            <label for="mobile">인증번호</label>
+                            <input type="text" name="mobile" id="verify_code_input">
+                            <button type="button" id="verify_code_confirm_btn">인증번호 확인</button>
+                            <input type="hidden" name="phone_verified" id="phone_verified">
+                        </p>
+
+                        <p class="final_btn">
+                            <button type="button" name="submitBtn" class="btn">저장하기</button>
+                            <a href="/user/mypage/info">
+                                <button type="button" class="btn">이전으로</button>
+                            </a>
+                        </p>
+                    </form>
+                </section>
             </section>
         </section>
-        </section>
-    </main>
+        <footer th:replace="layout/footer :: footer"></footer>
+    </section>
+</main>
 </body>
 </html>

@@ -34,11 +34,11 @@
         </association>
     </resultMap>
 
-    <select id="totalPayment" resultType="int">
+    <select id="totalPayment" resultType="Integer">
         SELECT SUM(P.price) AS total
         FROM payment P
         INNER JOIN bakelab.order O ON P.order_number = O.order_number
-        WHERE O.userID = 'test'
+        WHERE O.userID = #{userID}
     </select>
 
 

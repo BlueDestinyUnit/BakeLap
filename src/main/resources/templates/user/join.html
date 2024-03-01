@@ -9,6 +9,7 @@
     <title>JOIN</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../static/css/user/join.css" th:href="@{/css/user/join.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="../../static/js/user/join.js" th:src="@{/js/user/join.js}" defer></script>
@@ -123,9 +124,6 @@
                         <span class="err_agree">* 필수</span>
                     </p>
                     <p class="final_btn">
-                        <!--      input으로 바꿔야함                <a href="../LOGIN/LOGIN.html">
-                        <button type="button" class="btn">이전으로</button></a>-->
-
                         <a href="/user/login">
                             <button type="button" class="btn">이전으로</button>
                         </a>
@@ -136,7 +134,7 @@
                 </form>
             </section>
         </section>
-
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
 </main>
 

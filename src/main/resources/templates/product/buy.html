@@ -6,13 +6,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>구매</title>
     <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
     <script src="https://cdn.portone.io/v2/browser-sdk.js"></script>
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../static/css/product/buy.css" th:href="@{/css/product/buy.css}">
     <script src="../../static/js/product/buy.js" th:src="@{/js/product/buy.js}" defer></script>
     <script src="../../static/js/user/address.js" th:src="@{/js/user/address.js}" defer></script>
@@ -242,6 +243,7 @@
                 </div>
             </div>
         </div>
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
 </main>
 </body>

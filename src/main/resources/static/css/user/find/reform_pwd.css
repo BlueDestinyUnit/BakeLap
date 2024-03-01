@@ -30,12 +30,12 @@
     color: #bc734e;
 }
 
-form {
+.Box1 form {
     width: 600px;
     margin: 60px auto;
 }
 
-form label {
+.Box1 form label {
     font-family: MaruBuri;
     font-size: 20px;
     font-weight: bold;
@@ -47,7 +47,7 @@ form label {
     color: #772800;
 }
 
-form input {
+.Box1 form input {
     margin: 7px;
     padding: 16px 16px 16px 34px;
     border-radius: 45px;
@@ -55,7 +55,7 @@ form input {
     border: none;
 }
 
-form button {
+.Box1 form button {
     padding: 16px 33px 16px 33px;
     border-radius: 33px;
     background-color: #772800;
@@ -72,11 +72,11 @@ form button {
     margin: auto 5px;
 }
 
-form p {
+.Box1 form p {
     margin: 20px auto;
 }
 
-form p span {
+.Box1 form p span {
     font-size: 16px;
     font-family: MaruBuri;
     color: #bc734e;
@@ -87,6 +87,6 @@ form p span {
     letter-spacing: normal;
 }
 
-form .final_btn {
+.Box1 form .final_btn {
     text-align: center;
 }

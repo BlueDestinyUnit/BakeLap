@@ -5,11 +5,13 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>구매 정보</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
-    <link rel="stylesheet" href="../../../static/css/user/mypage/orderList.css" th:href="@{/css/user/mypage/orderList.css}">
-    <script src="../../../static/js/user/mypage/orderList.js" th:src="@{/js/user/mypage/orderList.js}" defer></script>
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
+    <link rel="stylesheet" href="../../../static/css/user/mypage/order_list.css" th:href="@{/css/user/mypage/order_list.css}">
+    <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
+    <script src="../../../static/js/user/mypage/order_list.js" th:src="@{/js/user/mypage/order_list.js}" defer></script>
     <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
     <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
 </head>
@@ -18,7 +20,6 @@
     <section>
         <header th:replace="layout/header :: header"></header>
         <aside th:replace="layout/side_bar :: side_bar"></aside>
-
         <section class="basket">
             <section class="cart-title">
                 <h1 class="Box-title">구매목록</h1>
@@ -63,6 +64,7 @@
                 </section>
             </section>
         </section>
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
 
 </main>

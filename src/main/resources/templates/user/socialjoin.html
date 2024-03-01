@@ -11,6 +11,7 @@
   <title>JOIN</title>
   <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
   <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+  <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
   <link rel="stylesheet" href="../../static/css/user/join.css" th:href="@{/css/user/join.css}">
   <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js" defer></script>
@@ -116,7 +117,7 @@
         </form>
       </section>
     </section>
-
+    <footer th:replace="layout/footer :: footer"></footer>
   </section>
 </main>
 

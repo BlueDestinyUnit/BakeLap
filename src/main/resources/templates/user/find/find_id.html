@@ -6,9 +6,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Find_id</title>
+    <title>아이디 찾기</title>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../../static/css/user/find/find_id.css" th:href="@{/css/user/find/find_id.css}">
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <script src="../../../static/js/user/find/find.js" th:src="@{/js/user/find/find.js}" defer></script>
@@ -17,34 +18,38 @@
     <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
 </head>
 <body>
-    <main>
-        <section>
-            <header th:replace="layout/header :: header"></header>
-            <aside th:replace="layout/side_bar :: side_bar"></aside>
+<main>
+    <section>
+        <header th:replace="layout/header :: header"></header>
+        <aside th:replace="layout/side_bar :: side_bar"></aside>
 
-            <section class="Box1">
+        <section class="Box1">
             <section class="innerBox1">
-            <h1 class="Find_id">Find_id</h1>
-            <form name="join_form" th:action="@{/user/find/id/view}" method="post" id="jaoin_form" onsubmit="return form_check()">
-                <p>
-                  <label for="u_name">이름</label>
-                  <input type="text" name="u_name" id="u_name">
-                  <br>
-                  <span class="err_name"></span>
-                </p>
-                <p>
-                    <label for="email_id">이메일</label>
-                    <input type="hidden" name="email" value="">
-                    <input type="text" name="email_id" id="email_id"> @
-                    <input type="text" name="email_dns" id="email_dns">
-                  </p>
-                  <p class="final_btn">
-                      <a href="/user/find/id/view"><button type="submit" class="btn">아이디 찾기</button></a>
-                  </p>
+                <h1 class="Find_id">Find_id</h1>
+                <form name="join_form" th:action="@{/user/find/id/view}" method="post" id="jaoin_form"
+                      onsubmit="return form_check()">
+                    <p>
+                        <label for="u_name">이름</label>
+                        <input type="text" name="u_name" id="u_name">
+                        <br>
+                        <span class="err_name"></span>
+                    </p>
+                    <p>
+                        <label for="email_id">이메일</label>
+                        <input type="hidden" name="email" value="">
+                        <input type="text" name="email_id" id="email_id"> @
+                        <input type="text" name="email_dns" id="email_dns">
+                    </p>
+                    <p class="final_btn">
+                        <a href="/user/find/id/view">
+                            <button type="submit" class="btn">아이디 찾기</button>
+                        </a>
+                    </p>
                 </form>
             </section>
-          </section>
+        </section>
+        <footer th:replace="layout/footer :: footer"></footer>
     </section>
-    </main>
+</main>
 </body>
 </html>

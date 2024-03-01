@@ -9,23 +9,18 @@ import com.bread.bakelab.service.PurchaseService;
 import com.bread.bakelab.service.SellerService;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -289,9 +284,12 @@ public class PurchaseController {
     // 구매목록
     @GetMapping("/user/mypage/orderList")
     public String orderList(@AuthenticationPrincipal SecurityUser user, Model model){
-        int userTotalPrice = purchaseService.totalPayment(user.getUserVO().getId());
+        Integer userTotalPrice = purchaseService.totalPayment(user.getUserVO().getId());
+        if(userTotalPrice == null){
+            userTotalPrice = 0;
+        }
         model.addAttribute("userTotalPrice", userTotalPrice);
-        return "user/mypage/orderList";
+        return "user/mypage/order_list";
     }
 
 

@@ -5,10 +5,11 @@
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>상품 재고</title>
     <script src="https://kit.fontawesome.com/e7e4504204.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/css/layout/header.css" th:href="@{/css/layout/header.css}">
     <link rel="stylesheet" href="../static/css/layout/side_bar.css" th:href="@{/css/layout/side_bar.css}">
+    <link rel="stylesheet" href="../static/css/layout/footer.css" th:href="@{/css/layout/footer.css}">
     <link rel="stylesheet" href="../../static/css/seller/stock.css" th:href="@{/css/seller/stock.css}">
     <script src="../../static/js/layout/header.js" th:src="@{/js/layout/header.js}" defer></script>
     <script src="../../static/js/layout/side_bar.js" th:src="@{/js/layout/side_bar.js}" defer></script>
@@ -41,6 +42,7 @@
                     </tbody>
                 </table>
             </section>
+            <footer th:replace="layout/footer :: footer"></footer>
         </section>
     </main>
 </body>

@@ -1,6 +1,5 @@
 const tbody = document.querySelector('tbody');
 let data; // 전역 변수로 data 선언
-
 function orderList() {
     tbody.innerHTML = '';
     data.orderList.forEach(order => {
