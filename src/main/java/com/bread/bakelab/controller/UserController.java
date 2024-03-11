@@ -339,7 +339,7 @@ public class UserController {
             session.invalidate();
         }
 
-        return "redirect:user/find/pwdReform/view";
+        return "redirect:pwdReform/view";
     }
 
     @GetMapping("/find/pwdReform/view")

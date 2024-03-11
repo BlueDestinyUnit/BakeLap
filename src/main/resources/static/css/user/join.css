@@ -2,7 +2,7 @@
 .Box1 {
     margin: 0 auto;
     background-color: #fdfdfd;
-    margin-bottom: 160px;
+    margin-bottom: 50px;
     width: 900px;
     height: 1600px;
     box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
@@ -110,7 +110,7 @@
     color: #bc734e;
 }
 
-hr {
+.Box1 > hr {
     border: 1px solid #707070;
     width: 500px;
     margin: 60px auto;

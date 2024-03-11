@@ -28,18 +28,18 @@
                 <h1 class="Reform_pwd">Reform_pwd</h1>
                 <section class="join">
 
-                    <form name="join_form" th:action="@{/user/find/pwdReform}" method="post" id="jaoin_form"
+                    <form name="join_form" th:action="@{/user/find/pwdReform}" method="post" id="join_form"
                           onsubmit="return form_check()">
                         <input type="hidden" name="id" th:value="${userId}">
                         <p>
                             <label for="pwd">수정할 비밀번호</label>
-                            <input type="text" th:name="pw" id="pwd">
+                            <input type="password" th:name="pw" id="pwd">
                             <br>
                             <span class="err_pwd">* 4~12글자까지만 입력 가능합니다.</span>
                         </p>
                         <p>
                             <label for="repwd">비밀번호 확인</label>
-                            <input type="text" name="repwd" id="repwd">
+                            <input type="password" name="repwd" id="repwd">
                             <br>
                             <span class="err_repwd">* 4~12글자까지만 입력 가능합니다.</span>
                         </p>

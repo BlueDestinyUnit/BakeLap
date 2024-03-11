@@ -39,6 +39,12 @@
 }
 
 @media only screen and (max-width: 768px){
+    .footer {
+        min-width: 768px;
+    }
+    .footer hr {
+        display: none;
+    }
     .footer > div {
         flex-direction: column;
     }

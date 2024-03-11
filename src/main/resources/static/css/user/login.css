@@ -1,9 +1,10 @@
 /* body영역 */
-
+section {}
 .Box1 {
     margin: 0 auto;
     background-color: #fdfdfd;
-    margin-top: 55px;
+    margin-top: 75px;
+    margin-bottom: 100px;
     width: 800px;
     height: 700px;
     box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
