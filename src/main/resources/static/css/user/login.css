@@ -1,17 +1,33 @@
 /* body영역 */
-section {}
-.Box1 {
+/*.Box1 {*/
+/*    margin: 0 auto;*/
+/*    background-color: #fdfdfd;*/
+/*    margin-top: 75px;*/
+
+/*    width: 800px;*/
+/*    height: 700px;*/
+/*    box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);*/
+/*    border-radius: 30px;*/
+/*}*/
+
+/*.innerBox1 {*/
+/*    padding-top: 40px;*/
+/*    height: 700px;*/
+/*}*/
+
+
+
+.innerBox1 {
     margin: 0 auto;
     background-color: #fdfdfd;
     margin-top: 75px;
-    margin-bottom: 100px;
+
     width: 800px;
     height: 700px;
     box-shadow: 0 5px 18px -7px rgba(0, 0, 0, 1);
     border-radius: 30px;
-}
 
-.innerBox1 {
+
     padding-top: 40px;
 }
 

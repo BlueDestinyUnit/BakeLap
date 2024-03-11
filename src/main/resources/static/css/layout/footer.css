@@ -9,6 +9,7 @@
 
 .footer > div {
     margin: 0 auto;
+    margin-top: 4px;
     justify-content: center;
     align-content: center;
     width: 700px;

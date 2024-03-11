@@ -11,7 +11,7 @@
 }
 
 body{
-    height: 100%;
+
 }
 
 a {
@@ -143,6 +143,10 @@ main > section::after{
 .search-box:hover > .search-txt {
     width: 240px;
     padding: 0 6px;
+}
+
+.Box1 {
+    min-height: 800px;
 }
 
 
